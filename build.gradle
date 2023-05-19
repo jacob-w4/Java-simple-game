@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'ccom.simulation'
+group 'com.simulation'
 version '1.0-SNAPSHOT'
 
 repositories {

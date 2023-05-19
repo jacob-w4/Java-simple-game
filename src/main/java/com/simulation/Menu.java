@@ -5,7 +5,6 @@ public class Menu {
     private int menuWidth;
 
 
-
     public int getMenuHeight() {
         return menuHeight;
     }
