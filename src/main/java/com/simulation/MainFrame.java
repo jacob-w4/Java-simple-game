@@ -5,14 +5,14 @@ import java.awt.*;
 
 public class MainFrame  {
 
-    private final static int height = 1100;
-    private final static int width = 1100;
+    private final static int height = 1000;
+    private final static int width = 1000;
 
 
 
     public static void main(String[] args) {
 
-        Settings settings = new Settings(1000, 1000);
+        Settings settings = new Settings(height, width);
         settings.start();
     }
 

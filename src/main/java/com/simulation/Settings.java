@@ -1,12 +1,14 @@
 package com.simulation;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class Settings implements ActionListener {
+public class Settings implements ActionListener, ChangeListener {
     private int heigth;
     private int width;
     private float difficulty;
@@ -20,12 +22,12 @@ public class Settings implements ActionListener {
 
     private JFrame settings;
 
-
+    private JLabel difficultyLabel;
 
 
     public Settings(int heigth, int width) {
-            this.heigth = heigth;
-            this.width = width;
+            this.heigth = heigth/2;
+            this.width = width/2;
 
     }
 
@@ -41,7 +43,7 @@ public class Settings implements ActionListener {
         settings.setResizable(false);
         settings.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         settings.setSize(width,heigth);
-        settings.setLayout(new FlowLayout(FlowLayout.TRAILING,width/3,50));
+        settings.setLayout(new FlowLayout(FlowLayout.TRAILING,width/4,50));
         settings.setLocation(505,400);
 
         // Tworzenie pola tekstowego, przycisku do zapisu i suwaka
@@ -50,12 +52,13 @@ public class Settings implements ActionListener {
         slider = new JSlider(1,3);
         slider.setMajorTickSpacing(1);
         slider.setPaintTicks(true);
+        slider.addChangeListener(this);
         save.addActionListener(this);
 
         // Tworzenie napisow przylegajacych do komponentow
         JLabel nameFieldLabel= new JLabel("Podaj imie: ");
         JLabel sliderLabel = new JLabel("Poziom gry: ");
-        JLabel difficultyLabel = new JLabel("   Sredni");
+        difficultyLabel = new JLabel("Sredni");
 
         // Tworzenie paneli
         JPanel namePanel = new JPanel();
@@ -75,9 +78,9 @@ public class Settings implements ActionListener {
         settings.add(save);
 
         // Ustawienie rozmiarow komponentow
-        slider.setPreferredSize(new Dimension(260,50));
-        save.setPreferredSize(new Dimension(260,50));
-        nameField.setPreferredSize(new Dimension(300,50));
+        slider.setPreferredSize(new Dimension(150,50));
+        save.setPreferredSize(new Dimension(200,50));
+        nameField.setPreferredSize(new Dimension(200,50));
 
 
         settings.setVisible(true);
@@ -110,6 +113,19 @@ public class Settings implements ActionListener {
             settings.dispose();
             MainFrame mainFrame = new MainFrame();
             mainFrame.start();
+        }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        if (e.getSource() == slider) {
+            if(slider.getValue() == 1) {
+                difficultyLabel.setText("Latwy ");
+            } else if (slider.getValue() == 2) {
+                difficultyLabel.setText("Sredni");
+            } else if (slider.getValue() == 3) {
+                difficultyLabel.setText("Trudny");
+            }
         }
     }
 }
