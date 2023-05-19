@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class Settings extends JFrame{
-    private int height;
+public class Settings implements ActionListener {
+    private int heigth;
     private int width;
     private float difficulty;
     private String name;
@@ -42,32 +42,59 @@ public class Settings extends JFrame{
 
     }
 
-    /*public void start() {
-        JFrame settings = new JFrame("Settings");
-        settings.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        settings.setVisible(true);
+
+    public void start() {
+
+        // Tworzenie okna ustawien
+        settings = new JFrame("Ustawienia");
         settings.setResizable(false);
-        settings.setSize(width,height);
-        settings.setLayout(null);
+        settings.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        settings.setSize(width,heigth);
+        settings.setLayout(new FlowLayout(FlowLayout.TRAILING,width/3,50));
+        settings.setLocation(505,400);
+
+        // Tworzenie pola tekstowego, przycisku do zapisu i suwaka
+        nameField = new JTextField();
+        save = new JButton("Zapisz");
+        slider = new JSlider(1,3);
+        slider.setMajorTickSpacing(1);
+        slider.setPaintTicks(true);
+        save.addActionListener(this);
+
+        // Tworzenie napisow przylegajacych do komponentow
+        JLabel nameFieldLabel= new JLabel("Podaj imie: ");
+        JLabel sliderLabel = new JLabel("Poziom gry: ");
+        JLabel difficultyLabel = new JLabel("   Sredni");
+
+        // Tworzenie paneli
+        JPanel namePanel = new JPanel();
+        JPanel sliderPanel = new JPanel();
+
+        namePanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+        sliderPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+
+        // Dodawanie elementow do okna ustawien
+        namePanel.add(nameFieldLabel);
+        namePanel.add(nameField);
+        sliderPanel.add(sliderLabel);
+        sliderPanel.add(slider);
+        sliderPanel.add(difficultyLabel);
+        settings.add(namePanel);
+        settings.add(sliderPanel);
+        settings.add(save);
+
+        // Ustawienie rozmiarow komponentow
+        slider.setPreferredSize(new Dimension(260,50));
+        save.setPreferredSize(new Dimension(260,50));
+        nameField.setPreferredSize(new Dimension(300,50));
 
 
-        JTextField name = new JTextField();
-        name.setPreferredSize(new Dimension(250, 50));
-        JSlider difficultySlider = new JSlider(1,3);
-        difficultySlider.setPreferredSize(new Dimension(200,100));
+        settings.setVisible(true);
+    }
 
-        JButton saveButton = new JButton("Save");
-        saveButton.setBounds(475,900,50,50);
-
-        //settings.add(name);
-        settings.add(difficultySlider);
-
-        // panel.add(label);
-        settings.add(saveButton);
-    } */
 
     public int getHeight() {
-        return height;
+        return heigth;
     }
 
     public int getWidth() {
