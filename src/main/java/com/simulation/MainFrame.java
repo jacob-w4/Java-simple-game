@@ -1,7 +1,12 @@
 package com.simulation;
 
-public class Main {
+public class MainFrame {
+
+    private int height;
+    private int width;
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
     }
+
+
 }
