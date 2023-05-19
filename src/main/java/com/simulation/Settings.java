@@ -50,6 +50,7 @@ public class Settings implements ActionListener, ChangeListener {
         nameField = new JTextField();
         save = new JButton("Zapisz");
         slider = new JSlider(1,3);
+
         slider.setMajorTickSpacing(1);
         slider.setPaintTicks(true);
         slider.addChangeListener(this);
