@@ -2,6 +2,8 @@ package com.simulation;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class Settings implements ActionListener {
@@ -10,31 +12,20 @@ public class Settings implements ActionListener {
     private float difficulty;
     private String name;
 
+    private JButton save;
+
+    private JSlider slider;
+
+    private JTextField nameField;
+
+    private JFrame settings;
 
 
-    public Settings() {
 
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
-        setResizable(false);
-        setSize(1000,1000);
-
-
-        //JTextField name = new JTextField();
-        //name.setPreferredSize(new Dimension(250, 50));
-        //JSlider difficultySlider = new JSlider(1,3);
-        //difficultySlider.setPreferredSize(new Dimension(200,100));
-
-
-        //JButton saveButton = new JButton("Save");
-        //saveButton.setBounds(175,150,50,50);
-
-        //settings.add(name);
-        //add(difficultySlider);
-
-        // panel.add(label);
-        //add(saveButton);
+    public Settings(int heigth, int width) {
+            this.heigth = heigth;
+            this.width = width;
 
     }
 
@@ -111,5 +102,14 @@ public class Settings implements ActionListener {
 
     public void nameToString() {
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == save) {
+            settings.dispose();
+            MainFrame mainFrame = new MainFrame();
+            mainFrame.start();
+        }
     }
 }
