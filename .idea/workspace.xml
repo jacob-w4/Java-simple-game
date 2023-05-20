@@ -6,10 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Buttons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" afterDir="false" />
     </list>
-    <list id="e9af2eec-fa61-490b-8c80-6c625c9f86ff" name="Changes by marek" comment="Changes by marek" />
+    <list id="e9af2eec-fa61-490b-8c80-6c625c9f86ff" name="Changes by marek" comment="Changes by marek">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +37,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/com/simulation/Board.java">
+      <ranges>
+        <range start1="2" end1="4" start2="2" end2="7" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="5" end1="6" start2="8" end2="31" changelist="e9af2eec-fa61-490b-8c80-6c625c9f86ff" />
+        <range start1="7" end1="7" start2="32" end2="44" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="8" end1="8" start2="45" end2="59" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="9" end1="9" start2="60" end2="102" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="10" end1="10" start2="103" end2="117" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="16" end1="17" start2="123" end2="124" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="22" end1="22" start2="129" end2="138" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/simulation/Entity.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="e9af2eec-fa61-490b-8c80-6c625c9f86ff" />
+        <range start1="4" end1="5" start2="4" end2="13" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="14" end1="14" start2="22" end2="30" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java">
+      <ranges>
+        <range start1="8" end1="9" start2="8" end2="9" changelist="e9af2eec-fa61-490b-8c80-6c625c9f86ff" />
+        <range start1="13" end1="14" start2="13" end2="15" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="16" end1="16" start2="17" end2="18" changelist="e9af2eec-fa61-490b-8c80-6c625c9f86ff" />
+        <range start1="19" end1="19" start2="21" end2="22" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="20" end1="21" start2="23" end2="23" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+        <range start1="24" end1="24" start2="26" end2="38" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -43,7 +81,7 @@
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "C:/Users/Jakub/IdeaProjects/LastExistence"
+    "last_opened_file_path": "C:/Users/Jakub/IdeaProjects/simulation2321"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -97,7 +135,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684525556813</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="0.0.1">
+      <created>1684526436842</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684526436842</updated>
+    </task>
+    <task id="LOCAL-00008" summary="0.0.1">
+      <created>1684526517889</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684526517889</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
