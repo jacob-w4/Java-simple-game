@@ -6,7 +6,7 @@ import java.awt.*;
 public class MainFrame  {
 
     private final static int height = 1000;
-    private final static int width = 1000;
+    private final static int width = 1666;
 
 
 
@@ -14,7 +14,7 @@ public class MainFrame  {
         // Utworzenie pierwszego okna programu
         Settings settings = new Settings(height, width);
         settings.start();
-    }
+        }
 
     public void start() {
         // Tworzenie glownego okna
