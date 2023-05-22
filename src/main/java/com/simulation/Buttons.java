@@ -65,9 +65,6 @@ public class Buttons implements ActionListener {
 
     public void moveLeft() {
         player.movePlayer(-1, "x");
-        //int[] i = player.getOldPostion();
-        //System.out.println(i[0]);
-        //System.out.println(i[1]);
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         show();
         board.refresh();
@@ -75,9 +72,6 @@ public class Buttons implements ActionListener {
 
     public void moveRight() {
         player.movePlayer(1, "x");
-        //int[] i = player.getOldPostion();
-        //System.out.println(i[0]);
-        //System.out.println(i[1]);
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         show();
         board.refresh();
@@ -85,9 +79,6 @@ public class Buttons implements ActionListener {
 
     public void moveUp() {
         player.movePlayer(-1, "y");
-        //int[] i = player.getOldPostion();
-        //System.out.println(i[0]);
-        //System.out.println(i[1]);
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         show();
         board.refresh();
@@ -95,9 +86,6 @@ public class Buttons implements ActionListener {
 
     public void moveDown() {
         player.movePlayer(1, "y");
-        int[] i = player.getOldPostion();
-        System.out.println(i[0]);
-        System.out.println(i[1]);
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         show();
         board.refresh();

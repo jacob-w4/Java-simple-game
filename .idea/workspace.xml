@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1" />
     <list id="0f6663df-f2bf-4e83-b336-6cd73580f055" name="Changes by marek" comment="Changes by marek" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +135,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684781647988</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="0.0.1">
+      <created>1684781836110</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684781836110</updated>
+    </task>
+    <task id="LOCAL-00014" summary="0.0.1">
+      <created>1684782049544</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684782049544</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
