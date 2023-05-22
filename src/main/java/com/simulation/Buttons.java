@@ -66,28 +66,24 @@ public class Buttons implements ActionListener {
     public void moveLeft() {
         player.movePlayer(-1, "x");
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        show();
         board.refresh();
     }
 
     public void moveRight() {
         player.movePlayer(1, "x");
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        show();
         board.refresh();
     }
 
     public void moveUp() {
         player.movePlayer(-1, "y");
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        show();
         board.refresh();
     }
 
     public void moveDown() {
         player.movePlayer(1, "y");
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        show();
         board.refresh();
     }
 

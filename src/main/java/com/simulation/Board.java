@@ -152,11 +152,6 @@ public class Board{
     }
 
     public int[][] getFieldStateArray() {
-        /*for (int i=0; i<20; i++){
-            for (int j=0; j<20; j++){
-                return fieldStateArray[i][j];
-            }
-        }*/
         return fieldStateArray;
     }
 
@@ -168,9 +163,9 @@ public class Board{
                     fieldStateArray[i][j] = 2;
                     fieldStateArray[oldPosition[0]][oldPosition[1]] = 0;
                 }
-                /*else if(i!=oldPosition[0] && j!= oldPosition[1]){
+                else if(i!=oldPosition[0] && j!= oldPosition[1]){
                     fieldStateArray[i][j] = fieldStateArray[i][j];
-                }*/
+                }
             }
         }
     }

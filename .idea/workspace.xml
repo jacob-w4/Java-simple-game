@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1" />
+    <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Buttons.java" afterDir="false" />
+    </list>
     <list id="0f6663df-f2bf-4e83-b336-6cd73580f055" name="Changes by marek" comment="Changes by marek" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684782049544</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="0.0.1">
+      <created>1684783448512</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684783448512</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
