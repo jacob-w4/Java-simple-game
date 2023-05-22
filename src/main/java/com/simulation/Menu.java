@@ -22,8 +22,8 @@ public class Menu {
 
     public void display() {
         menu = new JPanel();
-        menu.setPreferredSize(new Dimension(menuWidth,menuHeight));
-        buttons = new Buttons(menuHeight,menuWidth, board);
+        menu.setPreferredSize(new Dimension(menuWidth, menuHeight));
+        buttons = new Buttons(menuHeight, menuWidth, board);
         buttons.add(menu);
         menu.setVisible(true);
     }
