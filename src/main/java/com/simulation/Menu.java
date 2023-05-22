@@ -11,16 +11,19 @@ public class Menu {
 
     private Buttons buttons;
 
-    public Menu(int heigth, int width) {
+    private Board board;
+
+    public Menu(int heigth, int width, Board board) {
         menuHeight = heigth;
         menuWidth = width;
+        this.board = board;
         display();
     }
 
     public void display() {
         menu = new JPanel();
         menu.setPreferredSize(new Dimension(menuWidth,menuHeight));
-        buttons = new Buttons(menuHeight,menuWidth);
+        buttons = new Buttons(menuHeight,menuWidth, board);
         buttons.add(menu);
         menu.setVisible(true);
     }

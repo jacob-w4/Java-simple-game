@@ -30,6 +30,7 @@ public class Board{
 
     };
 
+
     private JPanel board;
     public Board(int heigth, int width){
         boardHeigth = heigth;
@@ -102,15 +103,37 @@ public class Board{
         board.setVisible(true);
     }
 
-    /*public void createMap(JButton[][] buttons) {
-        for (int i=0;i<20;i++){
-            for (int j = 0; j<20; j++){
-               if(i == 0 || j == 0 || j == 19 || i == 19){
-                   buttons[i][j].setBackground(Color.GREEN);
-               }
+    public void refresh() {
+
+        for (int i = 0; i<20;i++){
+            for (int j = 0; j<20;j++){
+                if(fieldStateArray[i][j] == 1){
+                    boardOfButtons[i][j].setBackground(Color.BLACK);
+                }
+                if(fieldStateArray[i][j] == 2){
+                    boardOfButtons[i][j].setBackground(Color.BLUE);
+                }
+                if(fieldStateArray[i][j] == 3){
+                    boardOfButtons[i][j].setBackground(Color.YELLOW);
+                }
+                if(fieldStateArray[i][j] == 4){
+                    boardOfButtons[i][j].setBackground(Color.GREEN);
+                }
+                if(fieldStateArray[i][j] == 5){
+                    boardOfButtons[i][j].setBackground(Color.RED);
+                }
+                if(fieldStateArray[i][j] == 0){
+                    boardOfButtons[i][j].setBackground(Color.WHITE);
+                }
             }
         }
-    }*/
+
+
+        // createMap(boardOfButtons);
+        board.setVisible(true);
+    }
+
+
 
     public void add(JFrame mainFrame) {
         mainFrame.add(board);
@@ -135,5 +158,20 @@ public class Board{
             }
         }*/
         return fieldStateArray;
+    }
+
+    public void setFieldStateArray(int[] entityPosition, int[] oldPosition) {
+        for (int i = 0; i<20; i++){
+            for (int j = 0; j<20; j++){
+
+                if (i==entityPosition[0] && j == entityPosition[1]){
+                    fieldStateArray[i][j] = 2;
+                    fieldStateArray[oldPosition[0]][oldPosition[1]] = 0;
+                }
+                /*else if(i!=oldPosition[0] && j!= oldPosition[1]){
+                    fieldStateArray[i][j] = fieldStateArray[i][j];
+                }*/
+            }
+        }
     }
 }

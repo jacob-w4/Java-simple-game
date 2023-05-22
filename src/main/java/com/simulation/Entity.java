@@ -3,7 +3,7 @@ package com.simulation;
 public abstract class Entity {
 
     private Board board = new Board();
-    private int[][] boardPosition = board.getFieldStateArray();
+    protected int[][] boardPosition = board.getFieldStateArray();
 
 
     /*for (int i=0; i<20; i++){

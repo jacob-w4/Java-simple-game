@@ -26,11 +26,12 @@ public class MainFrame  {
 
         // Tworzenie planszy i pola menu
         Board board = new Board(height,width*3/5);
-        Menu menu = new Menu(height, width*2/5);
 
-        // Dodanie planszy i pola menu do glownego okna
         board.display();
         board.add(mainFrame);
+        Menu menu = new Menu(height, width*2/5, board);
+
+        // Dodanie planszy i pola menu do glownego okna
         menu.add(mainFrame);
         menu.display();
 
