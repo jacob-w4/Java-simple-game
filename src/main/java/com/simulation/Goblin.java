@@ -10,21 +10,25 @@ public class Goblin {
     private int[] goblinPower;
     private int goblinMoves;
 
-    public void moveGoblin(){
+    public void moveGoblin() {
 
     }
-    public void goblinDies(){
+
+    public void goblinDies() {
 
     }
-    public void initiateFight(){
+
+    public void initiateFight() {
 
     }
-    public int getGoblinHP(){
+
+    public int getGoblinHP() {
         return goblinHP;
     }
-    public int getGoblinPower(){
-        for (int i: goblinPower
-             ) {
+
+    public int getGoblinPower() {
+        for (int i : goblinPower
+        ) {
             return i;
         }
         return 0; //nie ważne dla wyniku programu, pomijamy to 0 przy implementacji funkcjonalności goblina

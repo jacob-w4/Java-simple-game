@@ -6,17 +6,11 @@ public abstract class Entity {
     protected int[][] boardPosition = board.getFieldStateArray();
 
 
-    /*for (int i=0; i<20; i++){
-        for (int j=0; j<20; j++){
-            boardPosition[i][j]=;
-        }
-    }*/
-
-    public int[][] getBoardPosition(){
+    public int[][] getBoardPosition() {
         return boardPosition;
     }
 
-    public void deleteEntity(){
+    public void deleteEntity() {
 
     }
 

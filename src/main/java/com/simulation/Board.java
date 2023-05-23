@@ -3,36 +3,37 @@ package com.simulation;
 import javax.swing.*;
 import java.awt.*;
 
-public class Board{
+public class Board {
     private int boardHeigth;
     private int boardWidth;
     private int[][] fieldStateArray = {
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 2, 3, 1, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 1, 0 ,0 ,0 ,0, 0, 0, 1, 0, 0, 3, 4, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 0 ,0 ,0 ,0, 0, 0, 1, 4, 0, 0, 0, 0, 3, 0, 0, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 3, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 0 ,0 ,0 ,1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-            { 1, 3, 0, 0, 0 ,0 ,0 ,1, 0, 1, 4, 0, 4, 0, 3, 4, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 4, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 0 ,0 ,0 ,1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1 },
-            { 1, 0, 0, 0, 0 ,0 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1 ,1 ,1 ,1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 0 ,0 ,3 ,1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
-            { 1, 4, 0, 0, 0 ,0 ,0 ,1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-            { 1, 0, 0, 0, 0 ,0 ,0 ,1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 4, 0, 1 },
-            { 1, 1, 1, 1, 0 ,1 ,1 ,1, 0, 1, 1, 0, 1, 1, 1, 4, 1, 0, 0, 1 },
-            { 1, 3, 0, 0, 0 ,0 ,0 ,1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1 },
-            { 1, 3, 0, 4, 0 ,0 ,0 ,0, 0, 1, 0, 5, 0, 0, 1, 3, 1, 3, 3, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 2, 3, 1, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 4, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 0, 3, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 3, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 3, 0, 0, 0, 0, 0, 1, 0, 1, 4, 0, 4, 0, 3, 4, 0, 0, 0, 1},
+            {1, 0, 0, 0, 4, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 3, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+            {1, 4, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 4, 0, 1},
+            {1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 4, 1, 0, 0, 1},
+            {1, 3, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1},
+            {1, 3, 0, 4, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 1, 3, 1, 3, 3, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 
     };
 
 
     private JPanel board;
-    public Board(int heigth, int width){
+
+    public Board(int heigth, int width) {
         boardHeigth = heigth;
         boardWidth = width;
         //display();
@@ -43,52 +44,48 @@ public class Board{
     }
 
     private JButton[][] boardOfButtons;
+
     public void display() {
         board = new JPanel();
-        board.setPreferredSize(new Dimension(boardWidth,boardHeigth));
+        board.setPreferredSize(new Dimension(boardWidth, boardHeigth));
         boardOfButtons = new JButton[20][20];
         board.setBackground(Color.black);
-        board.setLayout(new GridLayout(20,20,2,2));
+        board.setLayout(new GridLayout(20, 20, 2, 2));
 
-        for (int i = 0; i<20;i++){
-            for (int j = 0; j<20;j++){
-                if(fieldStateArray[i][j] == 1){
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                if (fieldStateArray[i][j] == 1) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
                     boardOfButtons[i][j].setBackground(Color.BLACK);
                     board.add(boardOfButtons[i][j]);
 
-                }
-                else if(fieldStateArray[i][j] == 2){
+                } else if (fieldStateArray[i][j] == 2) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
                     boardOfButtons[i][j].setBackground(Color.BLUE);
                     board.add(boardOfButtons[i][j]);
-                }
-                else if(fieldStateArray[i][j] == 3){
+                } else if (fieldStateArray[i][j] == 3) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
                     boardOfButtons[i][j].setBackground(Color.YELLOW);
                     board.add(boardOfButtons[i][j]);
-                }
-                else if(fieldStateArray[i][j] == 4){
+                } else if (fieldStateArray[i][j] == 4) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
                     boardOfButtons[i][j].setBackground(Color.GREEN);
                     board.add(boardOfButtons[i][j]);
-                }
-                else if(fieldStateArray[i][j] == 5){
+                } else if (fieldStateArray[i][j] == 5) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
                     boardOfButtons[i][j].setBackground(Color.RED);
                     board.add(boardOfButtons[i][j]);
-                }
-                else{
+                } else {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
@@ -105,24 +102,24 @@ public class Board{
 
     public void refresh() {
 
-        for (int i = 0; i<20;i++){
-            for (int j = 0; j<20;j++){
-                if(fieldStateArray[i][j] == 1){
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                if (fieldStateArray[i][j] == 1) {
                     boardOfButtons[i][j].setBackground(Color.BLACK);
                 }
-                if(fieldStateArray[i][j] == 2){
+                if (fieldStateArray[i][j] == 2) {
                     boardOfButtons[i][j].setBackground(Color.BLUE);
                 }
-                if(fieldStateArray[i][j] == 3){
+                if (fieldStateArray[i][j] == 3) {
                     boardOfButtons[i][j].setBackground(Color.YELLOW);
                 }
-                if(fieldStateArray[i][j] == 4){
+                if (fieldStateArray[i][j] == 4) {
                     boardOfButtons[i][j].setBackground(Color.GREEN);
                 }
-                if(fieldStateArray[i][j] == 5){
+                if (fieldStateArray[i][j] == 5) {
                     boardOfButtons[i][j].setBackground(Color.RED);
                 }
-                if(fieldStateArray[i][j] == 0){
+                if (fieldStateArray[i][j] == 0) {
                     boardOfButtons[i][j].setBackground(Color.WHITE);
                 }
             }
@@ -132,7 +129,6 @@ public class Board{
         // createMap(boardOfButtons);
         board.setVisible(true);
     }
-
 
 
     public void add(JFrame mainFrame) {
@@ -156,14 +152,13 @@ public class Board{
     }
 
     public void setFieldStateArray(int[] entityPosition, int[] oldPosition) {
-        for (int i = 0; i<20; i++){
-            for (int j = 0; j<20; j++){
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
 
-                if (i==entityPosition[0] && j == entityPosition[1]){
+                if (i == entityPosition[0] && j == entityPosition[1]) {
                     fieldStateArray[i][j] = 2;
                     fieldStateArray[oldPosition[0]][oldPosition[1]] = 0;
-                }
-                else if(i!=oldPosition[0] && j!= oldPosition[1]){
+                } else if (i != oldPosition[0] && j != oldPosition[1]) {
                     fieldStateArray[i][j] = fieldStateArray[i][j];
                 }
             }

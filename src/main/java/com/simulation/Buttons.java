@@ -33,19 +33,24 @@ public class Buttons implements ActionListener {
     }
 
     public void start() {
+        // Tworzenie przyciskow
         up = new JButton("up");
         down = new JButton("down");
         left = new JButton("left");
         right = new JButton("right");
+        // Stworzenie panelu dla przyciskow
         buttonMenu = new JPanel();
         buttonMenu.setPreferredSize(new Dimension(buttonsWidth, buttonsHeigth));
 
         //up.setBounds();
+
+        // Dodanie przyciskow do panelu
         buttonMenu.add(up);
         buttonMenu.add(down);
         buttonMenu.add(right);
         buttonMenu.add(left);
 
+        // Ustawienie funkcji klikniecia dla przyciskow
         up.addActionListener(this);
         down.addActionListener(this);
         left.addActionListener(this);
@@ -64,25 +69,33 @@ public class Buttons implements ActionListener {
     }
 
     public void moveLeft() {
+        // Zmiana pozycji gracza w lewo
         player.movePlayer(-1, "x");
+        // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         board.refresh();
     }
 
     public void moveRight() {
+        // Zmiana pozycji gracza w prawo
         player.movePlayer(1, "x");
+        // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         board.refresh();
     }
 
     public void moveUp() {
+        // Zmiana pozycji gracza w gore
         player.movePlayer(-1, "y");
+        // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         board.refresh();
     }
 
     public void moveDown() {
+        // Zmiana pozycji gracza w dol
         player.movePlayer(1, "y");
+        // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         board.refresh();
     }

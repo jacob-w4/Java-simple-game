@@ -24,17 +24,21 @@ public class MainFrame  {
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
-        // Tworzenie planszy i pola menu
+        // Tworzenie planszy
         Board board = new Board(height,width*3/5);
 
+        // Dodanie planszy do glownego okna
         board.display();
         board.add(mainFrame);
+
+        // Tworzenie pola menu
         Menu menu = new Menu(height, width*2/5, board);
 
-        // Dodanie planszy i pola menu do glownego okna
+        // Dodanie pola menu do glownego okna
         menu.add(mainFrame);
         menu.display();
 
+        // Połączenie paneli w całość
         mainFrame.pack();
         mainFrame.setVisible(true);
 
