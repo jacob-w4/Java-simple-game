@@ -164,4 +164,18 @@ public class Board {
             }
         }
     }
+    public void setFieldStateArray2(int[][] entityPositions, int[][] oldPosition) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 20; j++) {
+                for (int k = 0; k < 20; k++) {
+                    if (j == entityPositions[i][1] && k == entityPositions[i][1]) {
+                        fieldStateArray[j][k] = 4;
+                        fieldStateArray[oldPosition[i][0]][oldPosition[i][1]] = 0;
+                    } else if (j != oldPosition[i][0] && k != oldPosition[i][1]) {
+                        fieldStateArray[j][k] = fieldStateArray[j][k];
+                    }
+                }
+            }
+        }
+    }
 }
