@@ -36,7 +36,6 @@ public class MainFrame  {
 
         // Dodanie pola menu do glownego okna
         menu.add(mainFrame);
-        menu.display();
 
         // Połączenie paneli w całość
         mainFrame.pack();

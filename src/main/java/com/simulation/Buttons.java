@@ -68,6 +68,7 @@ public class Buttons implements ActionListener {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public void moveLeft() {
@@ -76,7 +77,6 @@ public class Buttons implements ActionListener {
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         goblin.moveGoblin();
-        board.refresh();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         board.refresh();
     }
@@ -87,7 +87,6 @@ public class Buttons implements ActionListener {
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         goblin.moveGoblin();
-        board.refresh();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         board.refresh();
     }
@@ -98,7 +97,6 @@ public class Buttons implements ActionListener {
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         goblin.moveGoblin();
-        board.refresh();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         board.refresh();
     }
@@ -109,9 +107,9 @@ public class Buttons implements ActionListener {
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         goblin.moveGoblin();
-        board.refresh();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         board.refresh();
+        show();
     }
 
     @Override

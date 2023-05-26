@@ -7,8 +7,8 @@ import java.util.Random;
 
 public class Goblin extends Entity {
 
-    private int[][] goblinPosition = new int[10][2];
-    private int[][] goblinOldPosition = new int[10][2];
+    private int[][] goblinPosition = new int[2][2];
+    private int[][] goblinOldPosition = new int[2][2];
     private ImageIcon goblinIcon;
     private int goblinHP;
     private int[] goblinPower;
@@ -17,45 +17,48 @@ public class Goblin extends Entity {
 
     public Goblin() {
         findGoblinPos();
-        /*for (int i = 0; i < 10; i++) {
-            System.out.print(goblinPosition[i][1] + " ");
-            System.out.print(goblinPosition[i][0]);
-            System.out.println();
-        }*/
     }
+
     public void moveGoblin() {
         Random random = new Random();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
 
-        int randomize = random.nextInt(4);
-        switch (randomize) {
-            case 0 -> {
-                if(boardPosition[goblinPosition[i][0]][goblinPosition[i][1] + 1] == 0) {
+            int randomize = random.nextInt(4);
+            switch (randomize) {
+                case 0 -> {
+                    if (boardPosition[goblinPosition[i][0]][goblinPosition[i][1] + 1] == 0) {
+                        goblinOldPosition[i][1] = goblinPosition[i][1];
+                        goblinOldPosition[i][0] = goblinPosition[i][0];
+                        goblinPosition[i][1] += 1;
+                    }
+                }
+                case 1 -> {
+                    if (boardPosition[goblinPosition[i][0] + 1][goblinPosition[i][1]] == 0) {
+                        goblinOldPosition[i][1] = goblinPosition[i][1];
+                        goblinOldPosition[i][0] = goblinPosition[i][0];
+                        goblinPosition[i][0] += 1;
+                    }
+                }
+                case 2 -> {
+                    if (boardPosition[goblinPosition[i][0]][goblinPosition[i][1] - 1] == 0) {
+                        goblinOldPosition[i][1] = goblinPosition[i][1];
+                        goblinOldPosition[i][0] = goblinPosition[i][0];
+                        goblinPosition[i][1] -= 1;
+                    }
+
+                }
+                case 3 -> {
+                    if (boardPosition[goblinPosition[i][0] - 1][goblinPosition[i][1]] == 0) {
+                        goblinOldPosition[i][1] = goblinPosition[i][1];
+                        goblinOldPosition[i][0] = goblinPosition[i][0];
+                        goblinPosition[i][0] -= 1;
+                    }
+                }
+                default -> {
                     goblinOldPosition[i][1] = goblinPosition[i][1];
-                    goblinPosition[i][1] += 1;
-                }
-            }
-            case 1 -> {
-                if(boardPosition[goblinPosition[i][0]+1][goblinPosition[i][1]] == 0){
                     goblinOldPosition[i][0] = goblinPosition[i][0];
-                    goblinPosition[i][0] += 1;
                 }
             }
-            case 2 -> {
-                if(boardPosition[goblinPosition[i][0]][goblinPosition[i][1] - 1] == 0){
-                    goblinOldPosition[i][1] = goblinPosition[i][1];
-                    goblinPosition[i][1] -= 1;
-                }
-
-            }
-            case 3 -> {
-                if(boardPosition[goblinPosition[i][0]-1][goblinPosition[i][1]] == 0){
-                    goblinOldPosition[i][0] = goblinPosition[i][0];
-                    goblinPosition[i][0] -= 1;
-                }
-
-            }
-        }
         }
     }
 
@@ -66,7 +69,9 @@ public class Goblin extends Entity {
     public void initiateFight() {
 
     }
+
     ArrayList<Integer[]> positionsOfGoblins = new ArrayList<>();
+
     public void findGoblinPos() {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
@@ -78,7 +83,7 @@ public class Goblin extends Entity {
                 }
             }
         }
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             //System.out.print(positionsOfGoblins.get(i)[0]+" ");
             //System.out.println(Arrays.toString(positionsOfGoblins.get(i)));
             goblinPosition[i][0] = positionsOfGoblins.get(i)[0];
