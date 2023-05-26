@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Goblin {
+public class Goblin extends Entity {
 
     private int[][] goblinPosition = new int[10][2];
     private int[][] goblinOldPosition = new int[10][2];
