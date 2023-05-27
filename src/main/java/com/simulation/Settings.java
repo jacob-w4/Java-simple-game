@@ -115,7 +115,7 @@ public class Settings implements ActionListener, ChangeListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == save) {
-            settings.dispose();
+            //settings.dispose();
             MainFrame mainFrame = new MainFrame();
 
             //difficulty = slider.getValue();

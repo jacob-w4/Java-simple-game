@@ -23,6 +23,7 @@ public class Player extends Entity {
                 oldPostion[1] = playerPosition[1];
                 // Ustawienie nowej pozycji
                 playerPosition[1] += n;
+
             }
             else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 3) {
                 // Przypisanie starej pozycji

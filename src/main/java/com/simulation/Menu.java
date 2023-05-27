@@ -11,6 +11,8 @@ public class Menu {
 
     private Buttons buttons;
 
+    private Stats stats;
+
     private Board board;
 
     public Menu(int heigth, int width, Board board, Stats stats) {

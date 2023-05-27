@@ -1,6 +1,11 @@
 package com.simulation;
 
-public class Stats {
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+
+public class Stats implements ChangeListener {
     private int statsHeight;
     private int statsWidth;
     private static Integer health;

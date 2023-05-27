@@ -33,7 +33,7 @@ public class Goblin extends Entity {
                     }
                 }
                 case 1 -> {
-                    if (boardPosition[goblinPosition[i][0] + 1][goblinPosition[i][1]] == 0) {
+                    if (boardPosition[goblinPosition[i][1]][goblinPosition[i][1] +1 ] == 0) {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][0] += 1;
