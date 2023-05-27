@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Goblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Stats.java" afterDir="false" />
     </list>
-    <list id="8a16978e-016d-4c33-bb2e-e8ede005120e" name="Changes by marek" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Goblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Stats.java" afterDir="false" />
-    </list>
+    <list id="8a16978e-016d-4c33-bb2e-e8ede005120e" name="Changes by marek" comment="Changes by marek" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,59 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/com/simulation/Goblin.java">
-      <ranges>
-        <range start1="9" end1="11" start2="9" end2="11" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="23" end1="24" start2="23" end2="24" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="28" end1="29" start2="28" end2="29" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="35" end1="36" start2="35" end2="36" changelist="8a16978e-016d-4c33-bb2e-e8ede005120e" />
-        <range start1="42" end1="43" start2="42" end2="43" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="50" end1="51" start2="50" end2="51" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="85" end1="86" start2="85" end2="86" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java">
-      <ranges>
-        <range start1="12" end1="12" start2="12" end2="14" changelist="8a16978e-016d-4c33-bb2e-e8ede005120e" />
-        <range start1="15" end1="16" start2="17" end2="18" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="19" end1="19" start2="21" end2="22" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="25" end1="25" start2="28" end2="31" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="26" end1="27" start2="32" end2="37" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/simulation/Stats.java">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="8" changelist="8a16978e-016d-4c33-bb2e-e8ede005120e" />
-        <range start1="5" end1="6" start2="10" end2="11" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="10" end1="10" start2="15" end2="65" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="34" end1="34" start2="89" end2="106" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java">
-      <ranges>
-        <range start1="13" end1="14" start2="13" end2="14" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="23" end1="23" start2="23" end2="25" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="55" end1="57" start2="57" end2="58" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="85" end1="85" start2="86" end2="89" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="102" end1="103" start2="106" end2="107" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="113" end1="114" start2="117" end2="118" changelist="8a16978e-016d-4c33-bb2e-e8ede005120e" />
-        <range start1="115" end1="116" start2="119" end2="125" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="124" end1="124" start2="133" end2="134" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="126" end1="126" start2="136" end2="137" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="128" end1="128" start2="139" end2="140" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="130" end1="130" start2="142" end2="145" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="131" end1="131" start2="146" end2="150" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/simulation/Player.java">
-      <ranges>
-        <range start1="25" end1="25" start2="25" end2="26" changelist="8a16978e-016d-4c33-bb2e-e8ede005120e" />
-        <range start1="26" end1="26" start2="27" end2="35" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-        <range start1="35" end1="35" start2="44" end2="52" changelist="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -248,7 +183,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685127361840</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="0.0.1">
+      <created>1685213594239</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685213594239</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Changes by marek">
+      <created>1685213607034</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685213607034</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

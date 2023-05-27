@@ -7,8 +7,8 @@ import java.util.Random;
 
 public class Goblin extends Entity {
 
-    private int[][] goblinPosition = new int[1][2];
-    private int[][] goblinOldPosition = new int[1][2];
+    private int[][] goblinPosition = new int[3][2];
+    private int[][] goblinOldPosition = new int[3][2];
     private ImageIcon goblinIcon;
     private int goblinHP;
     private int[] goblinPower;
@@ -21,7 +21,7 @@ public class Goblin extends Entity {
 
     public void moveGoblin() {
         Random random = new Random();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 3; i++) {
 
             int randomize = random.nextInt(4);
             switch (randomize) {
@@ -83,7 +83,7 @@ public class Goblin extends Entity {
                 }
             }
         }
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 3; i++) {
             //System.out.print(positionsOfGoblins.get(i)[0]+" ");
             //System.out.println(Arrays.toString(positionsOfGoblins.get(i)));
             goblinPosition[i][0] = positionsOfGoblins.get(i)[0];
