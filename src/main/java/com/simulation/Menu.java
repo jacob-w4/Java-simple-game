@@ -13,18 +13,26 @@ public class Menu {
 
     private Board board;
 
-    public Menu(int heigth, int width, Board board) {
+    public Menu(int heigth, int width, Board board, Stats stats) {
         menuHeight = heigth;
         menuWidth = width;
         this.board = board;
+        this.stats = stats;
         display();
     }
 
     public void display() {
         menu = new JPanel();
         menu.setPreferredSize(new Dimension(menuWidth, menuHeight));
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setPreferredSize(new Dimension(menuWidth, menuHeight/2));
+        stats.setSize(menuHeight,menuWidth/2);
         buttons = new Buttons(menuHeight, menuWidth, board);
-        buttons.add(menu);
+        buttons.add(buttonPanel);
+        //stats = new Stats();
+        //buttons.add(menu);
+        menu.add(buttonPanel);
+        menu.add(stats.getStatsPanel());
         menu.setVisible(true);
     }
 

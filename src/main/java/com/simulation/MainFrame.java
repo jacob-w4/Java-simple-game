@@ -14,9 +14,12 @@ public class MainFrame  {
         // Utworzenie pierwszego okna programu
         Settings settings = new Settings(height, width);
         settings.start();
+        //Stats stats = new Stats(settings);
+        //settings.addStats(stats);
+        //stats.start();
         }
 
-    public void start() {
+    public void start(Stats stats) {
         // Tworzenie glownego okna
         JFrame mainFrame = new JFrame("Game");
         mainFrame.setResizable(false);
@@ -32,7 +35,7 @@ public class MainFrame  {
         board.add(mainFrame);
 
         // Tworzenie pola menu
-        Menu menu = new Menu(height, width*2/5, board);
+        Menu menu = new Menu(height, width*2/5, board, stats);
 
         // Dodanie pola menu do glownego okna
         menu.add(mainFrame);

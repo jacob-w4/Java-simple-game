@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class Settings implements ActionListener, ChangeListener {
     private int heigth;
     private int width;
-    private float difficulty;
+    private int difficulty;
     private String name;
 
     private JButton save;
@@ -21,6 +21,8 @@ public class Settings implements ActionListener, ChangeListener {
     private JTextField nameField;
 
     private JFrame settings;
+
+    private Stats stats;
 
     private JLabel difficultyLabel;
 
@@ -53,8 +55,7 @@ public class Settings implements ActionListener, ChangeListener {
 
         slider.setMajorTickSpacing(1);
         slider.setPaintTicks(true);
-        slider.addChangeListener(this);
-        save.addActionListener(this);
+
 
         // Tworzenie napisow przylegajacych do komponentow
         JLabel nameFieldLabel= new JLabel("Podaj imie: ");
@@ -83,6 +84,9 @@ public class Settings implements ActionListener, ChangeListener {
         save.setPreferredSize(new Dimension(200,50));
         nameField.setPreferredSize(new Dimension(200,50));
 
+        slider.addChangeListener(this);
+        save.addActionListener(this);
+        nameField.addActionListener(this);
 
         settings.setVisible(true);
     }
@@ -100,7 +104,7 @@ public class Settings implements ActionListener, ChangeListener {
         return name;
     }
 
-    public float getDifficulty() {
+    public int getDifficulty() {
         return difficulty;
     }
 
@@ -113,7 +117,12 @@ public class Settings implements ActionListener, ChangeListener {
         if(e.getSource() == save) {
             settings.dispose();
             MainFrame mainFrame = new MainFrame();
-            mainFrame.start();
+
+            //difficulty = slider.getValue();
+            name = nameField.getText();
+            stats = new Stats(this);
+            mainFrame.start(stats);
+            settings.dispose();
         }
     }
 
@@ -122,11 +131,21 @@ public class Settings implements ActionListener, ChangeListener {
         if (e.getSource() == slider) {
             if(slider.getValue() == 1) {
                 difficultyLabel.setText("Latwy ");
+                difficulty = 1;
             } else if (slider.getValue() == 2) {
                 difficultyLabel.setText("Sredni");
+                difficulty = 2;
             } else if (slider.getValue() == 3) {
                 difficultyLabel.setText("Trudny");
+                difficulty = 3;
             }
         }
+        if (e.getSource() == nameField) {
+            name = nameField.getText();
+        }
     }
+
+    /*public void addStats(Stats stats) {
+        this.stats = stats;
+    }*/
 }
