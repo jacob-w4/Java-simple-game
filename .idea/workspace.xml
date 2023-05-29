@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1" />
-    <list id="8a16978e-016d-4c33-bb2e-e8ede005120e" name="Changes by marek" comment="Changes by marek" />
+    <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -215,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685386392483</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="0.0.1">
+      <created>1685386417860</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685386417860</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,8 +238,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="0.0.1" />
     <MESSAGE value="Changes by marek" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by marek" />
+    <MESSAGE value="0.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.0.1" />
   </component>
 </project>
