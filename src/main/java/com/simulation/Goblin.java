@@ -26,44 +26,57 @@ public class Goblin extends Entity {
             int randomize = random.nextInt(4);
             switch (randomize) {
                 case 0 -> {
-                    if (boardPosition[goblinPosition[i][1] + 1][goblinPosition[i][0]] == 0) {
+                    if (boardPosition[goblinPosition[i][1] + 1][goblinPosition[i][0]] == 0 || boardPosition[goblinPosition[i][1] + 1][goblinPosition[i][0]] == 2) {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][1] += 1;
+                        System.out.print(goblinPosition[i][1] + " ");
+                        System.out.println(goblinPosition[i][0]);
                     }
                 }
                 case 1 -> {
-                    if (boardPosition[goblinPosition[i][1]][goblinPosition[i][1] +1 ] == 0) {
+                    if (boardPosition[goblinPosition[i][1]][goblinPosition[i][1] +1 ] == 0 || boardPosition[goblinPosition[i][1]][goblinPosition[i][1] +1 ] == 2) {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][0] += 1;
+                        System.out.print(goblinPosition[i][1] + " ");
+                        System.out.println(goblinPosition[i][0]);
                     }
                 }
                 case 2 -> {
-                    if (boardPosition[goblinPosition[i][1] - 1][goblinPosition[i][0]] == 0) {
+                    if (boardPosition[goblinPosition[i][1] - 1][goblinPosition[i][0]] == 0 || boardPosition[goblinPosition[i][1] - 1][goblinPosition[i][0]] == 2) {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][1] -= 1;
+                        System.out.print(goblinPosition[i][1] + " ");
+                        System.out.println(goblinPosition[i][0]);
                     }
 
                 }
                 case 3 -> {
-                    if (boardPosition[goblinPosition[i][1]][goblinPosition[i][0] - 1] == 0) {
+                    if (boardPosition[goblinPosition[i][1]][goblinPosition[i][0] - 1] == 0 || boardPosition[goblinPosition[i][1]][goblinPosition[i][0] - 1] == 2) {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][0] -= 1;
+                        System.out.print(goblinPosition[i][1] + " ");
+                        System.out.println(goblinPosition[i][0]);
                     }
                 }
                 default -> {
                     goblinOldPosition[i][1] = goblinPosition[i][1];
                     goblinOldPosition[i][0] = goblinPosition[i][0];
+                    System.out.print(goblinPosition[i][1] + " ");
+                    System.out.println(goblinPosition[i][0]);
                 }
             }
         }
     }
 
-    public void goblinDies() {
-
+    public void goblinDies(int i) {
+        goblinPosition[i][0] = 18;
+        goblinPosition[i][1] = 1;
+        goblinOldPosition[i][0] = 18;
+        goblinOldPosition[i][1] = 1;
     }
 
     public void initiateFight() {

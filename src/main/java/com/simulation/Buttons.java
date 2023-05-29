@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 
 public class Buttons implements ActionListener {
 
@@ -79,6 +80,8 @@ public class Buttons implements ActionListener {
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         board.refresh();
+        //board.changeTo1(wall);
+        show();
     }
 
     public void moveRight() {
@@ -88,7 +91,10 @@ public class Buttons implements ActionListener {
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+
         board.refresh();
+        //board.changeTo1(wall);
+        show();
     }
 
     public void moveUp() {
@@ -98,7 +104,10 @@ public class Buttons implements ActionListener {
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+
         board.refresh();
+        //board.changeTo1(wall);
+        show();
     }
 
     public void moveDown() {
@@ -108,6 +117,7 @@ public class Buttons implements ActionListener {
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+
         board.refresh();
         show();
     }

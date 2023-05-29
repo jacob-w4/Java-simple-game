@@ -8,7 +8,7 @@ public class MainFrame  {
     private final static int height = 1000;
     private final static int width = 1666;
 
-
+    private static JFrame mainFrame;
 
     public static void main(String[] args) {
         // Utworzenie pierwszego okna programu
@@ -21,7 +21,7 @@ public class MainFrame  {
 
     public void start(Stats stats) {
         // Tworzenie glownego okna
-        JFrame mainFrame = new JFrame("Game");
+        mainFrame = new JFrame("Game");
         mainFrame.setResizable(false);
         mainFrame.setLocation(505,400);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,6 +44,10 @@ public class MainFrame  {
         mainFrame.pack();
         mainFrame.setVisible(true);
 
+    }
+
+    public static void dispose() {
+        mainFrame.dispose();
     }
 
 }

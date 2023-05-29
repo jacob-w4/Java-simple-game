@@ -2,7 +2,7 @@ package com.simulation;
 
 import javax.swing.*;
 
-public class WinCon {
+public class EndScreen {
 
     private int[][] winConPosition;
     private ImageIcon winConIcon;

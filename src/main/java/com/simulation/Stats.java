@@ -11,13 +11,15 @@ public class Stats implements ChangeListener {
     private static Integer health;
     private int moves;
     private int magicAttacksLeft;
-    private int bodyCount;
-    private String name;
+    private static Integer bodyCount;
+    private static String name;
     private JPanel statsPanel = new JPanel();
 
     private JLabel nameLabel;
 
     private static JLabel healthLabel;
+
+    private static JLabel bodyCountLabel;
 
     private Settings settings;
 
@@ -37,6 +39,9 @@ public class Stats implements ChangeListener {
         else {
             health = 2;
         }
+        bodyCount = 0;
+
+        bodyCountLabel = new JLabel(bodyCount.toString());
         nameLabel = new JLabel(name);
         healthLabel = new JLabel(health.toString());
         statsPanel.add(nameLabel);
@@ -83,7 +88,7 @@ public class Stats implements ChangeListener {
         return magicAttacksLeft;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -99,9 +104,24 @@ public class Stats implements ChangeListener {
         health++;
         healthLabel.setText(health.toString());
     }
+    public static void decreaseHealth() {
+        health--;
+        healthLabel.setText(health.toString());
+        if(health==0){
+            endScreen.displayLose();
+        }
+    }
 
     @Override
     public void stateChanged(ChangeEvent e) {
 
+    }
+
+    public static Integer getBodyCount() {
+        return bodyCount;
+    }
+    public static void increaseBodyCount(){
+        bodyCount++;
+        bodyCountLabel.setText(bodyCount.toString());
     }
 }
