@@ -1,17 +1,42 @@
 package com.simulation;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class EndScreen {
 
-    private int[][] winConPosition;
-    private ImageIcon winConIcon;
-
-    public void winGame() {
-
+    public void displayWin() {
+        JFrame endScreen = new JFrame();
+        endScreen.setSize(new Dimension(420, 420));
+        endScreen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        endScreen.setResizable(false);
+        JLabel winLabel = new JLabel("You Won! \n");
+        //endScreen.add(winLabel);
+        JPanel winPanel = new JPanel();
+        JLabel bodyCount = new JLabel(Stats.getBodyCount().toString());
+        JLabel nameLabel = new JLabel(Stats.getName());
+        winPanel.add(winLabel);
+        winPanel.add(bodyCount);
+        winPanel.add(nameLabel);
+        endScreen.add(winPanel);
+        MainFrame.dispose();
+        endScreen.setVisible(true);
     }
-
-    public int[][] getWinConPosition() {
-        return winConPosition;
+    public void displayLose() {
+        JFrame endScreen = new JFrame();
+        endScreen.setSize(new Dimension(420, 420));
+        endScreen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        endScreen.setResizable(false);
+        JLabel winLabel = new JLabel("You Lost! \n");
+        //endScreen.add(winLabel);
+        JPanel winPanel = new JPanel();
+        JLabel bodyCount = new JLabel(Stats.getBodyCount().toString());
+        JLabel nameLabel = new JLabel(Stats.getName());
+        winPanel.add(winLabel);
+        winPanel.add(bodyCount);
+        winPanel.add(nameLabel);
+        endScreen.add(winPanel);
+        MainFrame.dispose();
+        endScreen.setVisible(true);
     }
 }

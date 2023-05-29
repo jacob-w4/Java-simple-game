@@ -9,6 +9,7 @@ public class Player extends Entity {
     private int[] oldPostion = new int[2];
     private ImageIcon playerIcon;
     private int playerMoves;
+    private EndScreen endScreen = new EndScreen();
 
     public Player() {
         findPlayerPos();
@@ -17,7 +18,7 @@ public class Player extends Entity {
     public void movePlayer(int n, String dir) {
         if (Objects.equals(dir, "x")) {
             // Zmiana pozycji x'owej gracza jezeli pole ma wartosc 0
-            if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 0) {
+            if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 0 || boardPosition[playerPosition[0]][playerPosition[1] + n] == 4) {
                 // Przypisanie starej pozycji
                 oldPostion[0] = playerPosition[0];
                 oldPostion[1] = playerPosition[1];
@@ -33,10 +34,13 @@ public class Player extends Entity {
                 playerPosition[1] += n;
                 Stats.increaseHealth();
             }
+            else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 5) {
+                endScreen.displayWin();
+            }
 
         } else if (Objects.equals(dir, "y")) {
             // Zmiana pozycji y'owej gracza jezeli pole ma wartosc 0
-            if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 0) {
+            if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 0 || boardPosition[playerPosition[0] + n][playerPosition[1]] == 4) {
                 // Przypisanie starej pozycji
                 oldPostion[0] = playerPosition[0];
                 oldPostion[1] = playerPosition[1];
@@ -50,6 +54,9 @@ public class Player extends Entity {
                 // Ustawienie nowej pozycji
                 playerPosition[0] += n;
                 Stats.increaseHealth();
+            }
+            else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 5) {
+                endScreen.displayWin();
             }
 
         }

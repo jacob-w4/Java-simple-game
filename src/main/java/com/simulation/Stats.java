@@ -6,6 +6,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 public class Stats implements ChangeListener {
+    private static EndScreen endScreen = new EndScreen();
     private int statsHeight;
     private int statsWidth;
     private static Integer health;
@@ -46,6 +47,7 @@ public class Stats implements ChangeListener {
         healthLabel = new JLabel(health.toString());
         statsPanel.add(nameLabel);
         statsPanel.add(healthLabel);
+        statsPanel.add(bodyCountLabel);
 
     }
 

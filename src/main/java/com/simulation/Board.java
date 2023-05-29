@@ -4,12 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Board {
+    //static final int[] wall = {18, 1};
     private int boardHeigth;
     private int boardWidth;
     private int[][] fieldStateArray = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-            {1, 2, 3, 1, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 1},
-            {1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0, 1},
+            {1, 2, 3, 1, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 1, 1, 1},
+            {1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 1, 1, 1},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 1},
             {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 3, 0, 0, 0, 0, 1},
             {1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
@@ -124,6 +125,7 @@ public class Board {
                 }
             }
         }
+        //changeTo1(wall);
 
 
         // createMap(boardOfButtons);
@@ -177,5 +179,11 @@ public class Board {
                 }
             }
         }
+    }
+    public void changeTo0(int[] position){
+        fieldStateArray[position[1]][position[0]] = 0;
+    }
+    public void changeTo1(int[] position){
+        fieldStateArray[position[1]][position[0]] = 1;
     }
 }

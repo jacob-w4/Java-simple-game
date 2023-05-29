@@ -10,12 +10,13 @@ public class Buttons implements ActionListener {
 
     private int buttonsHeigth;
     private int buttonsWidth;
-
+    //private EndScreen endScreen = new EndScreen();
     private JButton up;
     private JButton down;
     private JButton left;
     private JButton right;
     private JPanel buttonMenu;
+    static final int[] wall = {18, 1};
 
     public Player player = new Player();
 
@@ -77,8 +78,26 @@ public class Buttons implements ActionListener {
         player.movePlayer(-1, "x");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
+        for (int i = 0; i < 3; i++) {
+            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+                Stats.decreaseHealth();
+                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                    goblin.goblinDies(i);
+                }
+                else {
+                    board.changeTo0(goblin.getGoblinPosition()[i]);
+                    goblin.goblinDies(i);
+                }
+                Stats.increaseBodyCount();
+                board.refresh();
+                //board.changeTo1(wall);
+
+            }
+        }
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+
+
         board.refresh();
         //board.changeTo1(wall);
         show();
@@ -89,6 +108,21 @@ public class Buttons implements ActionListener {
         player.movePlayer(1, "x");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
+        for (int i = 0; i < 3; i++) {
+            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+                Stats.decreaseHealth();
+                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                    goblin.goblinDies(i);
+                }
+                else {
+                    board.changeTo0(goblin.getGoblinPosition()[i]);
+                    goblin.goblinDies(i);
+                }
+                Stats.increaseBodyCount();
+                board.refresh();
+                //board.changeTo1(wall);
+            }
+        }
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
 
@@ -102,6 +136,22 @@ public class Buttons implements ActionListener {
         player.movePlayer(-1, "y");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
+        for (int i = 0; i < 3; i++) {
+            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+                Stats.decreaseHealth();
+
+                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                    goblin.goblinDies(i);
+                }
+                else {
+                    board.changeTo0(goblin.getGoblinPosition()[i]);
+                    goblin.goblinDies(i);
+                }
+                Stats.increaseBodyCount();
+                board.refresh();
+                //board.changeTo1(wall);
+            }
+        }
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
 
@@ -115,10 +165,26 @@ public class Buttons implements ActionListener {
         player.movePlayer(1, "y");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
+        for (int i = 0; i < 3; i++) {
+            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+                Stats.decreaseHealth();
+                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                    goblin.goblinDies(i);
+                }
+                else {
+                    board.changeTo0(goblin.getGoblinPosition()[i]);
+                    goblin.goblinDies(i);
+                }
+                Stats.increaseBodyCount();
+                board.refresh();
+                //board.changeTo1(wall);
+            }
+        }
         goblin.moveGoblin();
         board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
 
         board.refresh();
+        //board.changeTo1(wall);
         show();
     }
 
