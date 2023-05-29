@@ -124,6 +124,7 @@ public class Board {
                     boardOfButtons[i][j].setBackground(Color.WHITE);
                 }
             }
+            boardOfButtons[1][18].setBackground(Color.black);
         }
         //changeTo1(wall);
 
@@ -184,7 +185,5 @@ public class Board {
     public void changeTo0(int[] position){
         fieldStateArray[position[1]][position[0]] = 0;
     }
-    public void changeTo1(){
-        fieldStateArray[1][18] = 1;
-    }
+
 }
