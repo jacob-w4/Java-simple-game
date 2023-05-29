@@ -59,6 +59,9 @@ public class Player extends Entity {
                 endScreen.displayWin();
             }
 
+        } else {
+            oldPostion[0] = playerPosition[0];
+            oldPostion[1] = playerPosition[1];
         }
 
     }

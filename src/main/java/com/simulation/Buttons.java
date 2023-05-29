@@ -78,15 +78,17 @@ public class Buttons implements ActionListener {
         player.movePlayer(-1, "x");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Goblin.amount; i++) {
             if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
                 Stats.decreaseHealth();
                 if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
@@ -108,15 +110,17 @@ public class Buttons implements ActionListener {
         player.movePlayer(1, "x");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Goblin.amount; i++) {
             if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
                 Stats.decreaseHealth();
                 if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
@@ -136,16 +140,18 @@ public class Buttons implements ActionListener {
         player.movePlayer(-1, "y");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Goblin.amount; i++) {
             if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
                 Stats.decreaseHealth();
 
                 if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
@@ -165,15 +171,17 @@ public class Buttons implements ActionListener {
         player.movePlayer(1, "y");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Goblin.amount; i++) {
             if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
                 Stats.decreaseHealth();
                 if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
+                    board.changeTo1();
                 }
                 Stats.increaseBodyCount();
                 board.refresh();

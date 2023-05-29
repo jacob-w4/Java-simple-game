@@ -7,8 +7,9 @@ import java.util.Random;
 
 public class Goblin extends Entity {
 
-    private int[][] goblinPosition = new int[3][2];
-    private int[][] goblinOldPosition = new int[3][2];
+    public static final int amount = 7;
+    private int[][] goblinPosition = new int[amount][2];
+    private int[][] goblinOldPosition = new int[amount][2];
     private ImageIcon goblinIcon;
     private int goblinHP;
     private int[] goblinPower;
@@ -21,26 +22,23 @@ public class Goblin extends Entity {
 
     public void moveGoblin() {
         Random random = new Random();
-        for (int i = 0; i < 3; i++) {
+        int randomize;
 
-            int randomize = random.nextInt(4);
+        for (int i = 0; i < amount; i++) {
+            randomize = random.nextInt(4);
             switch (randomize) {
                 case 0 -> {
                     if (boardPosition[goblinPosition[i][1] + 1][goblinPosition[i][0]] == 0 || boardPosition[goblinPosition[i][1] + 1][goblinPosition[i][0]] == 2) {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][1] += 1;
-                        System.out.print(goblinPosition[i][1] + " ");
-                        System.out.println(goblinPosition[i][0]);
                     }
                 }
                 case 1 -> {
-                    if (boardPosition[goblinPosition[i][1]][goblinPosition[i][1] +1 ] == 0 || boardPosition[goblinPosition[i][1]][goblinPosition[i][1] +1 ] == 2) {
+                    if (boardPosition[goblinPosition[i][1]][goblinPosition[i][0] + 1] == 0 || boardPosition[goblinPosition[i][1]][goblinPosition[i][0] + 1] == 2) {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][0] += 1;
-                        System.out.print(goblinPosition[i][1] + " ");
-                        System.out.println(goblinPosition[i][0]);
                     }
                 }
                 case 2 -> {
@@ -48,8 +46,6 @@ public class Goblin extends Entity {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][1] -= 1;
-                        System.out.print(goblinPosition[i][1] + " ");
-                        System.out.println(goblinPosition[i][0]);
                     }
 
                 }
@@ -58,18 +54,11 @@ public class Goblin extends Entity {
                         goblinOldPosition[i][1] = goblinPosition[i][1];
                         goblinOldPosition[i][0] = goblinPosition[i][0];
                         goblinPosition[i][0] -= 1;
-                        System.out.print(goblinPosition[i][1] + " ");
-                        System.out.println(goblinPosition[i][0]);
                     }
-                }
-                default -> {
-                    goblinOldPosition[i][1] = goblinPosition[i][1];
-                    goblinOldPosition[i][0] = goblinPosition[i][0];
-                    System.out.print(goblinPosition[i][1] + " ");
-                    System.out.println(goblinPosition[i][0]);
                 }
             }
         }
+
     }
 
     public void goblinDies(int i) {
@@ -96,7 +85,7 @@ public class Goblin extends Entity {
                 }
             }
         }
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < amount; i++) {
             //System.out.print(positionsOfGoblins.get(i)[0]+" ");
             //System.out.println(Arrays.toString(positionsOfGoblins.get(i)));
             goblinPosition[i][0] = positionsOfGoblins.get(i)[0];
