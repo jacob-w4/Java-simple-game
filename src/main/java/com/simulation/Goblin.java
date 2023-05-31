@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Goblin extends Entity {
 
-    public static final int amount = 7;
+    public static final int amount = 10;
     private int[][] goblinPosition = new int[amount][2];
     private int[][] goblinOldPosition = new int[amount][2];
     private ImageIcon goblinIcon;
@@ -25,6 +25,7 @@ public class Goblin extends Entity {
         int randomize;
 
         for (int i = 0; i < amount; i++) {
+
             randomize = random.nextInt(4);
             switch (randomize) {
                 case 0 -> {
@@ -78,24 +79,15 @@ public class Goblin extends Entity {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (boardPosition[i][j] == 4) {
-                    //System.out.println(i + " " + j);
                     Integer[] temp = {j, i};
-                    //System.out.println(temp[0] + " " + temp[1]);
                     positionsOfGoblins.add(temp);
                 }
             }
         }
         for (int i = 0; i < amount; i++) {
-            //System.out.print(positionsOfGoblins.get(i)[0]+" ");
-            //System.out.println(Arrays.toString(positionsOfGoblins.get(i)));
             goblinPosition[i][0] = positionsOfGoblins.get(i)[0];
             goblinPosition[i][1] = positionsOfGoblins.get(i)[1];
         }
-        /*for (int i = 0; i < 10; i++) {
-            //System.out.print(positionsOfGoblins.get(i)[0]+" ");
-            System.out.println(goblinPosition[i][0] + " " + goblinPosition[i][1]);
-        }*/
-        //System.out.println(goblinPosition[1][1]);
     }
 
 

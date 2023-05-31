@@ -29,7 +29,7 @@ public class Settings implements ActionListener, ChangeListener {
 
     public Settings(int heigth, int width) {
             this.heigth = heigth/2;
-            this.width = width/2;
+            this.width = width/3;
 
     }
 
