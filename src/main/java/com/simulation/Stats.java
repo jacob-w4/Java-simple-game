@@ -34,10 +34,10 @@ public class Stats implements ChangeListener {
         if (settings.getDifficulty() == 0) {
             health = 6;
         }
-        else if(settings.getDifficulty() == 2){
+        if(settings.getDifficulty() == 2){
             health = 6;
         }
-        else {
+        if (settings.getDifficulty() == 3){
             health = 2;
         }
         bodyCount = 0;
