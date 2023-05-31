@@ -42,12 +42,41 @@ public class Stats implements ChangeListener {
         }
         bodyCount = 0;
 
+        JPanel hpPanel = new JPanel();
+        JPanel bcPanel= new JPanel();
+        JPanel namePanel = new JPanel();
+
+        JLabel staticHP = new JLabel("Punkty zycia: ");
+        JLabel staticBC = new JLabel("Pokonani wrogowie: ");
+
         bodyCountLabel = new JLabel(bodyCount.toString());
         nameLabel = new JLabel(name);
         healthLabel = new JLabel(health.toString());
-        statsPanel.add(nameLabel);
-        statsPanel.add(healthLabel);
-        statsPanel.add(bodyCountLabel);
+
+        staticHP.setFont(new Font("Calibri",Font.PLAIN,22));
+        staticBC.setFont(new Font("Calibri",Font.PLAIN,22));
+        bodyCountLabel.setFont(new Font("Calibri",Font.PLAIN,22));
+        healthLabel.setFont(new Font("Calibri",Font.PLAIN,22));
+        nameLabel.setFont(new Font("Calibri",Font.PLAIN,22));
+
+        hpPanel.add(staticHP);
+        hpPanel.add(healthLabel);
+
+        namePanel.add(nameLabel);
+
+        bcPanel.add(staticBC);
+        bcPanel.add(bodyCountLabel);
+
+        statsPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 1));
+        statsPanel.add(namePanel);
+        statsPanel.add(hpPanel);
+        statsPanel.add(bcPanel);
+
+
+
+        //statsPanel.add(nameLabel);
+        //statsPanel.add(healthLabel);
+        //statsPanel.add(bodyCountLabel);
 
     }
 
