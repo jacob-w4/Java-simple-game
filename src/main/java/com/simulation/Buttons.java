@@ -102,7 +102,6 @@ public class Buttons implements ActionListener {
 
         board.refresh();
         //board.changeTo1(wall);
-        show();
     }
 
     public void moveRight() {
@@ -132,7 +131,6 @@ public class Buttons implements ActionListener {
 
         board.refresh();
         //board.changeTo1(wall);
-        show();
     }
 
     public void moveUp() {
@@ -162,7 +160,6 @@ public class Buttons implements ActionListener {
 
         board.refresh();
         //board.changeTo1(wall);
-        show();
     }
 
     public void moveDown() {
@@ -192,7 +189,6 @@ public class Buttons implements ActionListener {
 
         board.refresh();
         //board.changeTo1(wall);
-        show();
     }
 
     @Override
