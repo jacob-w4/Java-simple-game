@@ -29,12 +29,12 @@ public class Menu {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setPreferredSize(new Dimension(menuWidth, menuHeight/2));
         stats.setSize(menuHeight,menuWidth/2);
-        buttons = new Buttons(menuHeight, menuWidth, board);
+        buttons = new Buttons(menuHeight/2, menuWidth, board);
         buttons.add(buttonPanel);
-        //stats = new Stats();
-        //buttons.add(menu);
-        menu.add(buttonPanel);
+
+        menu.setLayout(new GridLayout(2,1));
         menu.add(stats.getStatsPanel());
+        menu.add(buttonPanel);
         menu.setVisible(true);
     }
 

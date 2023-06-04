@@ -14,17 +14,16 @@ public class MainFrame  {
         // Utworzenie pierwszego okna programu
         Settings settings = new Settings(height, width);
         settings.start();
-        //Stats stats = new Stats(settings);
-        //settings.addStats(stats);
-        //stats.start();
+
         }
 
     public void start(Stats stats) {
         // Tworzenie glownego okna
         mainFrame = new JFrame("Game");
         mainFrame.setResizable(false);
-        mainFrame.setLocation(505,400);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Dodanie layout'u
         mainFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
         // Tworzenie planszy
@@ -42,6 +41,9 @@ public class MainFrame  {
 
         // Połączenie paneli w całość
         mainFrame.pack();
+
+        // Wyswietlenie okna na środku ekranu
+        mainFrame.setLocationRelativeTo(null);
         mainFrame.setVisible(true);
 
     }

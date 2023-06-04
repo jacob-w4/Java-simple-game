@@ -45,14 +45,32 @@ public class Buttons implements ActionListener {
         // Stworzenie panelu dla przyciskow
         buttonMenu = new JPanel();
         buttonMenu.setPreferredSize(new Dimension(buttonsWidth, buttonsHeigth));
+        buttonMenu.setLayout(new GridLayout(3,1,0,0));
 
-        //up.setBounds();
+
+        // Ustawienie pozycji
+        JPanel topPanel = new JPanel();
+        JPanel midPanel = new JPanel();
+        JPanel botPanel = new JPanel();
+
+        //midPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+
+        topPanel.add(up);
+        midPanel.add(left);
+        midPanel.add(right);
+        botPanel.add(down);
+
+        // Ustawienie rozmiaru
+        up.setPreferredSize(new Dimension(100,75));
+        down.setPreferredSize(new Dimension(100,75));
+        right.setPreferredSize(new Dimension(100,75));
+        left.setPreferredSize(new Dimension(100,75));
+
 
         // Dodanie przyciskow do panelu
-        buttonMenu.add(up);
-        buttonMenu.add(down);
-        buttonMenu.add(right);
-        buttonMenu.add(left);
+        buttonMenu.add(topPanel);
+        buttonMenu.add(midPanel);
+        buttonMenu.add(botPanel);
 
         // Ustawienie funkcji klikniecia dla przyciskow
         up.addActionListener(this);

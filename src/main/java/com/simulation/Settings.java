@@ -46,7 +46,6 @@ public class Settings implements ActionListener, ChangeListener {
         settings.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         settings.setSize(width,heigth);
         settings.setLayout(new FlowLayout(FlowLayout.TRAILING,width/4,50));
-        settings.setLocation(505,400);
 
         // Tworzenie pola tekstowego, przycisku do zapisu i suwaka
         nameField = new JTextField();
@@ -88,6 +87,7 @@ public class Settings implements ActionListener, ChangeListener {
         save.addActionListener(this);
         nameField.addActionListener(this);
 
+        settings.setLocationRelativeTo(null);
         settings.setVisible(true);
     }
 
@@ -115,10 +115,8 @@ public class Settings implements ActionListener, ChangeListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == save) {
-            //settings.dispose();
             MainFrame mainFrame = new MainFrame();
 
-            //difficulty = slider.getValue();
             name = nameField.getText();
             stats = new Stats(this);
             mainFrame.start(stats);

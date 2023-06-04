@@ -20,6 +20,7 @@ public class EndScreen {
         winPanel.add(nameLabel);
         endScreen.add(winPanel);
         MainFrame.dispose();
+        endScreen.setLocationRelativeTo(null);
         endScreen.setVisible(true);
     }
     public void displayLose() {
@@ -28,7 +29,6 @@ public class EndScreen {
         endScreen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         endScreen.setResizable(false);
         JLabel winLabel = new JLabel("You Lost! \n");
-        //endScreen.add(winLabel);
         JPanel winPanel = new JPanel();
         JLabel bodyCount = new JLabel(Stats.getBodyCount().toString());
         JLabel nameLabel = new JLabel(Stats.getName());
@@ -37,6 +37,7 @@ public class EndScreen {
         winPanel.add(nameLabel);
         endScreen.add(winPanel);
         MainFrame.dispose();
+        endScreen.setLocationRelativeTo(null);
         endScreen.setVisible(true);
     }
 }

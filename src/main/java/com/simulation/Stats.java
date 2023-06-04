@@ -67,13 +67,13 @@ public class Stats implements ChangeListener {
         bcPanel.add(staticBC);
         bcPanel.add(bodyCountLabel);
 
-        statsPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 1));
+        statsPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 1000 , 2));
         statsPanel.add(namePanel);
         statsPanel.add(hpPanel);
         statsPanel.add(bcPanel);
 
 
-
+        //statsPanel.setBackground(Color.cyan);
         //statsPanel.add(nameLabel);
         //statsPanel.add(healthLabel);
         //statsPanel.add(bodyCountLabel);
