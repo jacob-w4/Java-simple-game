@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="0.0.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Buttons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Goblin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/EndScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/EndScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Stats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
