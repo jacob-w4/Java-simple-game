@@ -52,7 +52,4 @@ public class MainFrame  {
         mainFrame.dispose();
     }
 
-    public static JFrame getMainFrame() {
-        return mainFrame;
-    }
 }

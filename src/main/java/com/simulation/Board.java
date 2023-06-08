@@ -9,6 +9,8 @@ public class Board {
     private int boardWidth;
 
     private static int currentLvL;
+
+    // Pierwszy poziom
     private int[][] fieldStateArray = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 2, 0, 1, 0, 0, 0, 0, 0, 3, 1, 0, 3, 1, 0, 0, 0, 1, 1, 1},
@@ -32,7 +34,7 @@ public class Board {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 
     };
-
+    // Drugi poziom
     private static int[][] fieldStateArray2 = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 1, 1, 3, 1, 1, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 1, 1},
@@ -56,7 +58,7 @@ public class Board {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 
     };
-
+    // Trzeci poziom
     private static int[][] fieldStateArray3 = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 1},
@@ -137,11 +139,11 @@ public class Board {
                     boardOfButtons[i][j].setBackground(Color.RED);
                     board.add(boardOfButtons[i][j]);
                 } else if (fieldStateArray[i][j] == 6) {
-                        boardOfButtons[i][j] = new JButton();
-                        boardOfButtons[i][j].setBorderPainted(false);
-                        boardOfButtons[i][j].setFocusPainted(false);
-                        boardOfButtons[i][j].setBackground(Color.RED);
-                        board.add(boardOfButtons[i][j]);
+                    boardOfButtons[i][j] = new JButton();
+                    boardOfButtons[i][j].setBorderPainted(false);
+                    boardOfButtons[i][j].setFocusPainted(false);
+                    boardOfButtons[i][j].setBackground(Color.RED);
+                    board.add(boardOfButtons[i][j]);
                 } else if (fieldStateArray[i][j] == 7) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
@@ -195,11 +197,6 @@ public class Board {
             }
             boardOfButtons[1][18].setBackground(Color.black);
         }
-        //changeTo1(wall);
-
-
-        // createMap(boardOfButtons);
-        //board.setVisible(true);
     }
 
 
@@ -207,17 +204,11 @@ public class Board {
         mainFrame.add(board);
     }
 
-    public void nextBoard() {
 
-    }
 
-    public int getBoardHeight() {
-        return boardHeigth;
-    }
 
-    public int getBoardWidth() {
-        return boardWidth;
-    }
+
+
 
     public int[][] getFieldStateArray() {
         return fieldStateArray;

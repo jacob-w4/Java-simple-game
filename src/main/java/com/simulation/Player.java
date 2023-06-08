@@ -40,7 +40,7 @@ public class Player extends Entity {
                 Board.setCurrentLvL(3);
                 boardPosition = Board.getFieldStateArray3();
                 Buttons.nextLvl();
-            }else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 7) {
+            } else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 7) {
                 endScreen.displayWin();
             }
 
@@ -58,24 +58,29 @@ public class Player extends Entity {
                 oldPostion[1] = playerPosition[1];
                 // Ustawienie nowej pozycji
                 playerPosition[0] += n;
+                // Dodanie zycia do statystyk
                 Stats.increaseHealth();
+
+                // Przejscie na drugą plansze
             } else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 5) {
                 Board.setCurrentLvL(2);
                 boardPosition = Board.getFieldStateArray2();
                 Buttons.nextLvl();
-            }  else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 6) {
+
+                // Przejscie na trzecia plansze
+            } else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 6) {
                 Board.setCurrentLvL(3);
                 boardPosition = Board.getFieldStateArray3();
                 Buttons.nextLvl();
-            }else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 7) {
+
+                // Wyswietlenie okna wygranej
+            } else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 7) {
                 endScreen.displayWin();
             }
-
         } else {
             oldPostion[0] = playerPosition[0];
             oldPostion[1] = playerPosition[1];
         }
-
     }
 
     public void findPlayerPos() {

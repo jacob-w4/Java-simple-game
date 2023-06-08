@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
+
 
 public class Buttons implements ActionListener {
 
@@ -16,13 +16,14 @@ public class Buttons implements ActionListener {
     private JButton left;
     private JButton right;
     private JPanel buttonMenu;
-    static final int[] wall = {18, 1};
 
     public static Player player = new Player();
 
     public static Goblin goblin = new Goblin();
 
     private static Board board;
+
+    private static boolean nextLvl = false;
 
 
     public void add(JPanel menu) {
@@ -32,7 +33,7 @@ public class Buttons implements ActionListener {
     public Buttons(int heigth, int width, Board board) {
         buttonsHeigth = heigth / 2;
         buttonsWidth = width;
-        this.board = board;
+        Buttons.board = board;
         start();
     }
 
@@ -92,6 +93,9 @@ public class Buttons implements ActionListener {
     }
 
     public static void nextLvl() {
+        for (int i = 0; i < Goblin.amount; i++) {
+            goblin.goblinDies(i);
+        }
         if (Board.getCurrentLvL() == 2) {
             for (int i = 0; i < 20; i++) {
                 for (int j = 0; j < 20; j++) {
@@ -108,6 +112,7 @@ public class Buttons implements ActionListener {
         player.findPlayerPos();
         goblin.findGoblinPos();
         board.refresh();
+        nextLvl = true;
     }
 
     public void moveLeft() {
@@ -132,12 +137,16 @@ public class Buttons implements ActionListener {
 
             }
         }
-        goblin.moveGoblin();
-        board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        if(!nextLvl) {
+            goblin.moveGoblin();
+            board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        }
+
 
 
         board.refresh();
         //board.changeTo1(wall);
+        nextLvl = false;
     }
 
     public void moveRight() {
@@ -161,11 +170,14 @@ public class Buttons implements ActionListener {
                 //board.changeTo1(wall);
             }
         }
-        goblin.moveGoblin();
-        board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        if(!nextLvl) {
+            goblin.moveGoblin();
+            board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        }
 
         board.refresh();
         //board.changeTo1(wall);
+        nextLvl = false;
     }
 
     public void moveUp() {
@@ -189,11 +201,14 @@ public class Buttons implements ActionListener {
                 //board.changeTo1(wall);
             }
         }
-        goblin.moveGoblin();
-        board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        if(!nextLvl) {
+            goblin.moveGoblin();
+            board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        }
 
         board.refresh();
         //board.changeTo1(wall);
+        nextLvl = false;
     }
 
     public void moveDown() {
@@ -217,11 +232,14 @@ public class Buttons implements ActionListener {
                 //board.changeTo1(wall);
             }
         }
-        goblin.moveGoblin();
-        board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        if(!nextLvl) {
+            goblin.moveGoblin();
+            board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        }
 
         board.refresh();
         //board.changeTo1(wall);
+        nextLvl = false;
     }
 
     @Override
