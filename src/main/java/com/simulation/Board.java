@@ -7,6 +7,8 @@ public class Board {
     //static final int[] wall = {18, 1};
     private int boardHeigth;
     private int boardWidth;
+
+    private static int currentLvL;
     private int[][] fieldStateArray = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 2, 0, 1, 0, 0, 0, 0, 0, 3, 1, 0, 3, 1, 0, 0, 0, 1, 1, 1},
@@ -31,12 +33,61 @@ public class Board {
 
     };
 
+    private static int[][] fieldStateArray2 = {
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 3, 1, 1, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 1, 1},
+            {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1},
+            {1, 0, 0, 1, 0, 1, 0, 1, 1, 3, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},
+            {1, 3, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+            {1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
+            {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 4, 1},
+            {1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1},
+            {1, 0, 0, 1, 0, 1, 0, 4, 0, 0, 4, 0, 0, 1, 0, 1, 0, 1, 0, 1},
+            {1, 0, 0, 1, 4, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},
+            {1, 0, 2, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+            {1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1},
+            {1, 0, 0, 4, 0, 0, 1, 1, 0, 1, 0, 4, 0, 0, 3, 1, 0, 0, 0, 1},
+            {1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1},
+            {1, 1, 1, 0, 0, 0, 3, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 4, 0, 1},
+            {1, 3, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+
+    };
+
+    private static int[][] fieldStateArray3 = {
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 1, 1, 1},
+            {1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 4, 0, 0, 4, 0, 0, 4, 0, 0, 4, 0, 0, 4, 0, 0, 4, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 4, 0, 0, 4, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+
+    };
+
 
     private JPanel board;
 
     public Board(int heigth, int width) {
         boardHeigth = heigth;
         boardWidth = width;
+        currentLvL = 1;
         //display();
     }
 
@@ -61,7 +112,6 @@ public class Board {
                     boardOfButtons[i][j].setFocusPainted(false);
                     boardOfButtons[i][j].setBackground(Color.BLACK);
                     board.add(boardOfButtons[i][j]);
-
                 } else if (fieldStateArray[i][j] == 2) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
@@ -86,6 +136,18 @@ public class Board {
                     boardOfButtons[i][j].setFocusPainted(false);
                     boardOfButtons[i][j].setBackground(Color.RED);
                     board.add(boardOfButtons[i][j]);
+                } else if (fieldStateArray[i][j] == 6) {
+                        boardOfButtons[i][j] = new JButton();
+                        boardOfButtons[i][j].setBorderPainted(false);
+                        boardOfButtons[i][j].setFocusPainted(false);
+                        boardOfButtons[i][j].setBackground(Color.RED);
+                        board.add(boardOfButtons[i][j]);
+                } else if (fieldStateArray[i][j] == 7) {
+                    boardOfButtons[i][j] = new JButton();
+                    boardOfButtons[i][j].setBorderPainted(false);
+                    boardOfButtons[i][j].setFocusPainted(false);
+                    boardOfButtons[i][j].setBackground(Color.MAGENTA);
+                    board.add(boardOfButtons[i][j]);
                 } else {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
@@ -100,6 +162,7 @@ public class Board {
         // createMap(boardOfButtons);
         board.setVisible(true);
     }
+
 
     public void refresh() {
 
@@ -119,6 +182,12 @@ public class Board {
                 }
                 if (fieldStateArray[i][j] == 5) {
                     boardOfButtons[i][j].setBackground(Color.RED);
+                }
+                if (fieldStateArray[i][j] == 6) {
+                    boardOfButtons[i][j].setBackground(Color.RED);
+                }
+                if (fieldStateArray[i][j] == 7) {
+                    boardOfButtons[i][j].setBackground(Color.MAGENTA);
                 }
                 if (fieldStateArray[i][j] == 0) {
                     boardOfButtons[i][j].setBackground(Color.WHITE);
@@ -167,6 +236,7 @@ public class Board {
             }
         }
     }
+
     public void setFieldStateArray2(int[][] entityPositions, int[][] oldPosition) {
         for (int i = 0; i < Goblin.amount; i++) {
             for (int j = 0; j < 20; j++) {
@@ -182,8 +252,24 @@ public class Board {
             }
         }
     }
-    public void changeTo0(int[] position){
+
+    public void changeTo0(int[] position) {
         fieldStateArray[position[1]][position[0]] = 0;
     }
 
+    public static int[][] getFieldStateArray2() {
+        return fieldStateArray2;
+    }
+
+    public static int[][] getFieldStateArray3() {
+        return fieldStateArray3;
+    }
+
+    public static void setCurrentLvL(int currentLvL) {
+        Board.currentLvL = currentLvL;
+    }
+
+    public static int getCurrentLvL() {
+        return currentLvL;
+    }
 }

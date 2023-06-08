@@ -68,6 +68,17 @@ public class Goblin extends Entity {
         goblinOldPosition[i][0] = 18;
         goblinOldPosition[i][1] = 1;
     }
+    public void goblinNextLvL(int i) {
+        goblinPosition[i][0] = 18;
+        goblinPosition[i][1] = 1;
+        goblinOldPosition[i][0] = 18;
+        goblinOldPosition[i][1] = 1;
+        //if (Board.getCurrentLvL() == 2) {
+            //boardPosition = Board.getFieldStateArray2();
+        //} else  if (Board.getCurrentLvL() == 3) {
+           // boardPosition = Board.getFieldStateArray3();
+        //}
+    }
 
     public void initiateFight() {
 
@@ -76,6 +87,14 @@ public class Goblin extends Entity {
     ArrayList<Integer[]> positionsOfGoblins = new ArrayList<>();
 
     public void findGoblinPos() {
+        if(Board.getCurrentLvL() == 2) {
+            boardPosition = Board.getFieldStateArray2();
+            positionsOfGoblins.clear();
+        }
+        if(Board.getCurrentLvL() == 3) {
+            boardPosition = Board.getFieldStateArray3();
+            positionsOfGoblins.clear();
+        }
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (boardPosition[i][j] == 4) {
@@ -109,5 +128,9 @@ public class Goblin extends Entity {
 
     public int[][] getGoblinOldPosition() {
         return goblinOldPosition;
+    }
+
+    public void setGoblinPosition(int[][] goblinPosition) {
+        this.goblinPosition = goblinPosition;
     }
 }

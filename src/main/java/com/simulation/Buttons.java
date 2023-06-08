@@ -18,11 +18,11 @@ public class Buttons implements ActionListener {
     private JPanel buttonMenu;
     static final int[] wall = {18, 1};
 
-    public Player player = new Player();
+    public static Player player = new Player();
 
-    public Goblin goblin = new Goblin();
+    public static Goblin goblin = new Goblin();
 
-    private Board board;
+    private static Board board;
 
 
     public void add(JPanel menu) {
@@ -45,7 +45,7 @@ public class Buttons implements ActionListener {
         // Stworzenie panelu dla przyciskow
         buttonMenu = new JPanel();
         buttonMenu.setPreferredSize(new Dimension(buttonsWidth, buttonsHeigth));
-        buttonMenu.setLayout(new GridLayout(3,1,0,0));
+        buttonMenu.setLayout(new GridLayout(3, 1, 0, 0));
 
 
         // Ustawienie pozycji
@@ -61,10 +61,10 @@ public class Buttons implements ActionListener {
         botPanel.add(down);
 
         // Ustawienie rozmiaru
-        up.setPreferredSize(new Dimension(100,75));
-        down.setPreferredSize(new Dimension(100,75));
-        right.setPreferredSize(new Dimension(100,75));
-        left.setPreferredSize(new Dimension(100,75));
+        up.setPreferredSize(new Dimension(100, 75));
+        down.setPreferredSize(new Dimension(100, 75));
+        right.setPreferredSize(new Dimension(100, 75));
+        left.setPreferredSize(new Dimension(100, 75));
 
 
         // Dodanie przyciskow do panelu
@@ -91,19 +91,37 @@ public class Buttons implements ActionListener {
         System.out.println();
     }
 
+    public static void nextLvl() {
+        if (Board.getCurrentLvL() == 2) {
+            for (int i = 0; i < 20; i++) {
+                for (int j = 0; j < 20; j++) {
+                    board.getFieldStateArray()[i][j] = Board.getFieldStateArray2()[i][j];
+                }
+            }
+        } else if (Board.getCurrentLvL() == 3) {
+            for (int i = 0; i < 20; i++) {
+                for (int j = 0; j < 20; j++) {
+                    board.getFieldStateArray()[i][j] = Board.getFieldStateArray3()[i][j];
+                }
+            }
+        }
+        player.findPlayerPos();
+        goblin.findGoblinPos();
+        board.refresh();
+    }
+
     public void moveLeft() {
         // Zmiana pozycji gracza w lewo
         player.movePlayer(-1, "x");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         for (int i = 0; i < Goblin.amount; i++) {
-            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+            if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
-                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
 
-                }
-                else {
+                } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
 
@@ -128,13 +146,12 @@ public class Buttons implements ActionListener {
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         for (int i = 0; i < Goblin.amount; i++) {
-            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+            if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
-                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
 
-                }
-                else {
+                } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
 
@@ -157,14 +174,13 @@ public class Buttons implements ActionListener {
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         for (int i = 0; i < Goblin.amount; i++) {
-            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+            if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
 
-                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
 
-                }
-                else {
+                } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
                 }
@@ -186,13 +202,12 @@ public class Buttons implements ActionListener {
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
         for (int i = 0; i < Goblin.amount; i++) {
-            if(Math.abs(player.getPlayerPosition()[0]-goblin.getGoblinPosition()[i][1])<=1 && Math.abs(player.getPlayerPosition()[1]-goblin.getGoblinPosition()[i][0])<=1){
+            if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
-                if(player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]){
+                if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
 
-                }
-                else {
+                } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
 

@@ -25,16 +25,22 @@ public class Player extends Entity {
                 // Ustawienie nowej pozycji
                 playerPosition[1] += n;
 
-            }
-            else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 3) {
+            } else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 3) {
                 // Przypisanie starej pozycji
                 oldPostion[0] = playerPosition[0];
                 oldPostion[1] = playerPosition[1];
                 // Ustawienie nowej pozycji
                 playerPosition[1] += n;
                 Stats.increaseHealth();
-            }
-            else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 5) {
+            } else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 5) {
+                Board.setCurrentLvL(2);
+                boardPosition = Board.getFieldStateArray2();
+                Buttons.nextLvl();
+            } else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 6) {
+                Board.setCurrentLvL(3);
+                boardPosition = Board.getFieldStateArray3();
+                Buttons.nextLvl();
+            }else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 7) {
                 endScreen.displayWin();
             }
 
@@ -46,16 +52,22 @@ public class Player extends Entity {
                 oldPostion[1] = playerPosition[1];
                 // Ustawienie nowej pozycji
                 playerPosition[0] += n;
-            }
-            else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 3) {
+            } else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 3) {
                 // Przypisanie starej pozycji
                 oldPostion[0] = playerPosition[0];
                 oldPostion[1] = playerPosition[1];
                 // Ustawienie nowej pozycji
                 playerPosition[0] += n;
                 Stats.increaseHealth();
-            }
-            else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 5) {
+            } else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 5) {
+                Board.setCurrentLvL(2);
+                boardPosition = Board.getFieldStateArray2();
+                Buttons.nextLvl();
+            }  else if (boardPosition[playerPosition[0] + n][playerPosition[1]] == 6) {
+                Board.setCurrentLvL(3);
+                boardPosition = Board.getFieldStateArray3();
+                Buttons.nextLvl();
+            }else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 7) {
                 endScreen.displayWin();
             }
 
@@ -71,8 +83,8 @@ public class Player extends Entity {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (boardPosition[i][j] == 2) {
-                    playerPosition[1] = i;
-                    playerPosition[0] = j;
+                    playerPosition[0] = i;
+                    playerPosition[1] = j;
                 }
             }
         }
