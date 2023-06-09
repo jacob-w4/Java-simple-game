@@ -1,16 +1,20 @@
 package com.simulation;
 
+import com.simulation.menu.Stats;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
-public class Settings implements ActionListener, ChangeListener {
-    private int heigth;
-    private int width;
+public class Settings implements ActionListener, ChangeListener, KeyListener {
+    private final int heigth;
+    private final int width;
     private int difficulty;
     private String name;
 
@@ -33,11 +37,6 @@ public class Settings implements ActionListener, ChangeListener {
 
     }
 
-    public void difficultySlider() {
-
-    }
-
-
     public void start() {
 
         // Tworzenie okna ustawien
@@ -47,6 +46,7 @@ public class Settings implements ActionListener, ChangeListener {
         settings.setSize(width,heigth);
         settings.setLayout(new FlowLayout(FlowLayout.TRAILING,width/4,50));
 
+
         // Tworzenie pola tekstowego, przycisku do zapisu i suwaka
         nameField = new JTextField();
         save = new JButton("Zapisz");
@@ -55,6 +55,7 @@ public class Settings implements ActionListener, ChangeListener {
         slider.setMajorTickSpacing(1);
         slider.setPaintTicks(true);
 
+        save.setFocusPainted(false);
 
         // Tworzenie napisow przylegajacych do komponentow
         JLabel nameFieldLabel= new JLabel("Podaj imie: ");
@@ -87,17 +88,11 @@ public class Settings implements ActionListener, ChangeListener {
         save.addActionListener(this);
         nameField.addActionListener(this);
 
+        nameField.addKeyListener(this);
+        slider.addKeyListener(this);
+
         settings.setLocationRelativeTo(null);
         settings.setVisible(true);
-    }
-
-
-    public int getHeight() {
-        return heigth;
-    }
-
-    public int getWidth() {
-        return width;
     }
 
     public String getName() {
@@ -108,9 +103,6 @@ public class Settings implements ActionListener, ChangeListener {
         return difficulty;
     }
 
-    public void nameToString() {
-
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -143,7 +135,26 @@ public class Settings implements ActionListener, ChangeListener {
         }
     }
 
-    /*public void addStats(Stats stats) {
-        this.stats = stats;
-    }*/
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode()==10) {
+            MainFrame mainFrame = new MainFrame();
+
+            name = nameField.getText();
+            stats = new Stats(this);
+            mainFrame.start(stats);
+            settings.dispose();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
 }

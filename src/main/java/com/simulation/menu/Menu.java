@@ -1,19 +1,19 @@
-package com.simulation;
+package com.simulation.menu;
+
+import com.simulation.Board;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Menu {
-    private int menuHeight;
-    private int menuWidth;
+    private final int menuHeight;
+    private final int menuWidth;
 
     private JPanel menu;
 
-    private Buttons buttons;
+    private final Stats stats;
 
-    private Stats stats;
-
-    private Board board;
+    private final Board board;
 
     public Menu(int heigth, int width, Board board, Stats stats) {
         menuHeight = heigth;
@@ -29,7 +29,7 @@ public class Menu {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setPreferredSize(new Dimension(menuWidth, menuHeight/2));
         stats.setSize(menuHeight,menuWidth/2);
-        buttons = new Buttons(menuHeight/2, menuWidth, board);
+        Buttons buttons = new Buttons(menuHeight / 2, menuWidth, board);
         buttons.add(buttonPanel);
 
         menu.setLayout(new GridLayout(2,1));
@@ -42,11 +42,4 @@ public class Menu {
         mainFrame.add(menu);
     }
 
-    public int getMenuHeight() {
-        return menuHeight;
-    }
-
-    public int getMenuWidth() {
-        return menuWidth;
-    }
 }

@@ -1,4 +1,8 @@
-package com.simulation;
+package com.simulation.menu;
+
+import com.simulation.Board;
+import com.simulation.entities.Goblin;
+import com.simulation.entities.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,16 +10,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
+
 public class Buttons implements ActionListener {
 
-    private int buttonsHeigth;
-    private int buttonsWidth;
-    //private EndScreen endScreen = new EndScreen();
+    private final int buttonsHeigth;
+    private final int buttonsWidth;
     private JButton up;
     private JButton down;
     private JButton left;
     private JButton right;
     private JPanel buttonMenu;
+
+    private static int moveCounter;
 
     public static Player player = new Player();
 
@@ -54,6 +60,12 @@ public class Buttons implements ActionListener {
         JPanel midPanel = new JPanel();
         JPanel botPanel = new JPanel();
 
+
+        up.setFocusPainted(false);
+        down.setFocusPainted(false);
+        right.setFocusPainted(false);
+        left.setFocusPainted(false);
+
         //midPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
 
         topPanel.add(up);
@@ -79,17 +91,6 @@ public class Buttons implements ActionListener {
         left.addActionListener(this);
         right.addActionListener(this);
 
-    }
-
-    public void show() {
-        int[][] tab = board.getFieldStateArray();
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                System.out.print(tab[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
     }
 
     public static void nextLvl() {
@@ -246,12 +247,20 @@ public class Buttons implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == up) {
             moveUp();
+            moveCounter++;
         } else if (e.getSource() == down) {
             moveDown();
+            moveCounter++;
         } else if (e.getSource() == left) {
             moveLeft();
+            moveCounter++;
         } else if (e.getSource() == right) {
             moveRight();
+            moveCounter++;
         }
+    }
+
+    public static int getMoveCounter() {
+        return moveCounter;
     }
 }

@@ -1,17 +1,20 @@
 package com.simulation;
 
+import com.simulation.entities.Goblin;
+import com.simulation.entities.Player;
+
 import javax.swing.*;
 import java.awt.*;
 
+
 public class Board {
-    //static final int[] wall = {18, 1};
     private int boardHeigth;
     private int boardWidth;
 
     private static int currentLvL;
 
     // Pierwszy poziom
-    private int[][] fieldStateArray = {
+    private final int[][] fieldStateArray = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 2, 0, 1, 0, 0, 0, 0, 0, 3, 1, 0, 3, 1, 0, 0, 0, 1, 1, 1},
             {1, 0, 0, 1, 0, 0, 0, 0, 4, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1},
@@ -35,7 +38,7 @@ public class Board {
 
     };
     // Drugi poziom
-    private static int[][] fieldStateArray2 = {
+    private static final int[][] fieldStateArray2 = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 1, 1, 3, 1, 1, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 1, 1},
             {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1},
@@ -59,7 +62,7 @@ public class Board {
 
     };
     // Trzeci poziom
-    private static int[][] fieldStateArray3 = {
+    private static final int[][] fieldStateArray3 = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 1},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
@@ -118,25 +121,29 @@ public class Board {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
-                    boardOfButtons[i][j].setBackground(Color.BLUE);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(Player.getPlayerIcon());
                     board.add(boardOfButtons[i][j]);
                 } else if (fieldStateArray[i][j] == 3) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
-                    boardOfButtons[i][j].setBackground(Color.YELLOW);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(new ImageIcon("src/main/java/res/heart.png"));
                     board.add(boardOfButtons[i][j]);
                 } else if (fieldStateArray[i][j] == 4) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
-                    boardOfButtons[i][j].setBackground(Color.GREEN);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(Goblin.getGoblinIcon());
                     board.add(boardOfButtons[i][j]);
                 } else if (fieldStateArray[i][j] == 5) {
                     boardOfButtons[i][j] = new JButton();
                     boardOfButtons[i][j].setBorderPainted(false);
                     boardOfButtons[i][j].setFocusPainted(false);
-                    boardOfButtons[i][j].setBackground(Color.RED);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(new ImageIcon("src/main/java/res/diamond.png"));
                     board.add(boardOfButtons[i][j]);
                 } else if (fieldStateArray[i][j] == 6) {
                     boardOfButtons[i][j] = new JButton();
@@ -171,28 +178,42 @@ public class Board {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (fieldStateArray[i][j] == 1) {
+                    boardOfButtons[i][j].setIcon(null);
                     boardOfButtons[i][j].setBackground(Color.BLACK);
                 }
                 if (fieldStateArray[i][j] == 2) {
-                    boardOfButtons[i][j].setBackground(Color.BLUE);
+                    boardOfButtons[i][j].setIcon(null);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(Player.getPlayerIcon());
                 }
                 if (fieldStateArray[i][j] == 3) {
-                    boardOfButtons[i][j].setBackground(Color.YELLOW);
+                    boardOfButtons[i][j].setIcon(null);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(new ImageIcon("src/main/java/res/heart.png"));
                 }
                 if (fieldStateArray[i][j] == 4) {
-                    boardOfButtons[i][j].setBackground(Color.GREEN);
+                    boardOfButtons[i][j].setIcon(null);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(Goblin.getGoblinIcon());
                 }
                 if (fieldStateArray[i][j] == 5) {
-                    boardOfButtons[i][j].setBackground(Color.RED);
+                    boardOfButtons[i][j].setIcon(null);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(new ImageIcon("src/main/java/res/diamond.png"));
                 }
                 if (fieldStateArray[i][j] == 6) {
-                    boardOfButtons[i][j].setBackground(Color.RED);
+                    boardOfButtons[i][j].setIcon(null);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(new ImageIcon("src/main/java/res/diamond.png"));
                 }
                 if (fieldStateArray[i][j] == 7) {
-                    boardOfButtons[i][j].setBackground(Color.MAGENTA);
+                    boardOfButtons[i][j].setIcon(null);
+                    boardOfButtons[i][j].setBackground(Color.white);
+                    boardOfButtons[i][j].setIcon(new ImageIcon("src/main/java/res/cup.png"));
                 }
                 if (fieldStateArray[i][j] == 0) {
                     boardOfButtons[i][j].setBackground(Color.WHITE);
+                    boardOfButtons[i][j].setIcon(null);
                 }
             }
             boardOfButtons[1][18].setBackground(Color.black);
@@ -203,11 +224,6 @@ public class Board {
     public void add(JFrame mainFrame) {
         mainFrame.add(board);
     }
-
-
-
-
-
 
 
     public int[][] getFieldStateArray() {
@@ -263,4 +279,5 @@ public class Board {
     public static int getCurrentLvL() {
         return currentLvL;
     }
+
 }

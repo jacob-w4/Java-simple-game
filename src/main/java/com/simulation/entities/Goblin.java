@@ -1,20 +1,18 @@
-package com.simulation;
+package com.simulation.entities;
+
+import com.simulation.Board;
+import com.simulation.entities.Entity;
 
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Goblin extends Entity {
 
     public static final int amount = 10;
-    private int[][] goblinPosition = new int[amount][2];
-    private int[][] goblinOldPosition = new int[amount][2];
-    private ImageIcon goblinIcon;
-    private int goblinHP;
-    private int[] goblinPower;
-    private int goblinMoves;
-
+    private final int[][] goblinPosition = new int[amount][2];
+    private final int[][] goblinOldPosition = new int[amount][2];
+    private final static ImageIcon goblinIcon = new ImageIcon("src/main/java/res/goblin.png");
 
     public Goblin() {
         findGoblinPos();
@@ -68,21 +66,6 @@ public class Goblin extends Entity {
         goblinOldPosition[i][0] = 18;
         goblinOldPosition[i][1] = 1;
     }
-    public void goblinNextLvL(int i) {
-        goblinPosition[i][0] = 18;
-        goblinPosition[i][1] = 1;
-        goblinOldPosition[i][0] = 18;
-        goblinOldPosition[i][1] = 1;
-        //if (Board.getCurrentLvL() == 2) {
-            //boardPosition = Board.getFieldStateArray2();
-        //} else  if (Board.getCurrentLvL() == 3) {
-           // boardPosition = Board.getFieldStateArray3();
-        //}
-    }
-
-    public void initiateFight() {
-
-    }
 
     ArrayList<Integer[]> positionsOfGoblins = new ArrayList<>();
 
@@ -109,19 +92,6 @@ public class Goblin extends Entity {
         }
     }
 
-
-    public int getGoblinHP() {
-        return goblinHP;
-    }
-
-    public int getGoblinPower() {
-        for (int i : goblinPower
-        ) {
-            return i;
-        }
-        return 0; //nie ważne dla wyniku programu, pomijamy to 0 przy implementacji funkcjonalności goblina
-    }
-
     public int[][] getGoblinPosition() {
         return goblinPosition;
     }
@@ -129,8 +99,7 @@ public class Goblin extends Entity {
     public int[][] getGoblinOldPosition() {
         return goblinOldPosition;
     }
-
-    public void setGoblinPosition(int[][] goblinPosition) {
-        this.goblinPosition = goblinPosition;
+    public static ImageIcon getGoblinIcon() {
+        return goblinIcon;
     }
 }

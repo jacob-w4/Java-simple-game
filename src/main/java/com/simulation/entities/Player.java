@@ -1,15 +1,19 @@
-package com.simulation;
+package com.simulation.entities;
+
+import com.simulation.Board;
+import com.simulation.menu.Buttons;
+import com.simulation.EndScreen;
+import com.simulation.menu.Stats;
 
 import javax.swing.*;
 import java.util.Objects;
 
 public class Player extends Entity {
 
-    private int[] playerPosition = new int[2];
-    private int[] oldPostion = new int[2];
-    private ImageIcon playerIcon;
-    private int playerMoves;
-    private EndScreen endScreen = new EndScreen();
+    private final int[] playerPosition = new int[2];
+    private final int[] oldPostion = new int[2];
+    private final static ImageIcon playerIcon = new ImageIcon("src/main/java/res/miner64.png");
+    private final EndScreen endScreen = new EndScreen();
 
     public Player() {
         findPlayerPos();
@@ -103,7 +107,7 @@ public class Player extends Entity {
         return oldPostion;
     }
 
-    public void setPlayerPosition(int[] playerPosition) {
-        this.playerPosition = playerPosition;
+    public static ImageIcon getPlayerIcon() {
+        return playerIcon;
     }
 }

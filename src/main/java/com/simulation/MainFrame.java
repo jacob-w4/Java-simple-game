@@ -1,7 +1,11 @@
 package com.simulation;
 
+import com.simulation.menu.Menu;
+import com.simulation.menu.Stats;
+
 import javax.swing.*;
 import java.awt.*;
+
 
 public class MainFrame  {
 
@@ -9,6 +13,8 @@ public class MainFrame  {
     private final static int width = 1666;
 
     private static JFrame mainFrame;
+
+    private static long startTime;
 
     public static void main(String[] args) {
         // Utworzenie pierwszego okna programu
@@ -34,7 +40,7 @@ public class MainFrame  {
         board.add(mainFrame);
 
         // Tworzenie pola menu
-        Menu menu = new Menu(height, width*2/5, board, stats);
+        com.simulation.menu.Menu menu = new Menu(height, width*2/5, board, stats);
 
         // Dodanie pola menu do glownego okna
         menu.add(mainFrame);
@@ -46,10 +52,15 @@ public class MainFrame  {
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setVisible(true);
 
+        startTime = System.currentTimeMillis();
+
     }
 
     public static void dispose() {
         mainFrame.dispose();
     }
 
+    public static long getStartTime() {
+        return startTime;
+    }
 }
