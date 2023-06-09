@@ -67,6 +67,7 @@ public class Buttons implements ActionListener {
         down.setFocusPainted(false);
         right.setFocusPainted(false);
         left.setFocusPainted(false);
+        wait.setFocusPainted(false);
 
         //midPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
 
