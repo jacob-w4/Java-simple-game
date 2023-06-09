@@ -34,7 +34,13 @@ public class EndScreen {
         JLabel nameLabel = new JLabel("Nazwa gracza: " + Stats.getName());
         JLabel movesLabel = new JLabel("Wykonane ruchy: " + Buttons.getMoveCounter());
         timer();
-        JLabel timer = new JLabel("Czas gry: " + elapsedMinutes + ":" + secondsDisplay);
+        JLabel timer;
+        if (secondsDisplay <= 9 ) {
+            timer = new JLabel("Czas gry: " + elapsedMinutes + ":0" + secondsDisplay);
+        } else {
+            timer = new JLabel("Czas gry: " + elapsedMinutes + ":" + secondsDisplay);
+        }
+
 
         winLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
         bodyCount.setFont(new Font("Calibri", Font.PLAIN, 22));
@@ -55,9 +61,16 @@ public class EndScreen {
         endScreen.setLocationRelativeTo(null);
         endScreen.setVisible(true);
 
-        Path path = Paths.get("src/main/java/saves/last_game.txt");
-        String data = "Wygrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Czas gry: " + elapsedMinutes + ":" + secondsDisplay
-                + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
+        Path path = Paths.get("src/main/java/saves/" + Stats.getName() + ".txt");
+        String data;
+        if (secondsDisplay <= 9) {
+            data = "Wygrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Czas gry: " + elapsedMinutes + ":0" + secondsDisplay
+                    + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
+        } else {
+            data = "Wygrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Czas gry: " + elapsedMinutes + ":" + secondsDisplay
+                    + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
+        }
+
 
         try {
             Files.writeString(path, data,
@@ -84,7 +97,12 @@ public class EndScreen {
         JLabel nameLabel = new JLabel("Nazwa gracza: " + Stats.getName());
         JLabel movesLabel = new JLabel("Wykonane ruchy: " + Buttons.getMoveCounter());
         timer();
-        JLabel timer = new JLabel("Czas gry: " + elapsedMinutes + ":" + secondsDisplay);
+        JLabel timer;
+        if (secondsDisplay <= 9 ) {
+            timer = new JLabel("Czas gry: " + elapsedMinutes + ":0" + secondsDisplay);
+        } else {
+            timer = new JLabel("Czas gry: " + elapsedMinutes + ":" + secondsDisplay);
+        }
 
         winLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
         bodyCount.setFont(new Font("Calibri", Font.PLAIN, 22));
@@ -105,10 +123,16 @@ public class EndScreen {
         endScreen.setLocationRelativeTo(null);
         endScreen.setVisible(true);
 
-        Path path = Paths.get("src/main/java/saves/last_game.txt");
-        String data = "Przegrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Czas gry: " + elapsedMinutes + ":" + secondsDisplay
-                + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
+        Path path = Paths.get("src/main/java/saves/" + Stats.getName() + ".txt");
 
+        String data;
+        if (secondsDisplay <= 9) {
+            data = "Wygrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Czas gry: " + elapsedMinutes + ":0" + secondsDisplay
+                    + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
+        } else {
+            data = "Wygrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Czas gry: " + elapsedMinutes + ":" + secondsDisplay
+                    + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
+        }
         try {
             Files.writeString(path, data,
                     StandardCharsets.UTF_8);

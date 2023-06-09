@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-
 public class Buttons implements ActionListener {
 
     private final int buttonsHeigth;
@@ -18,6 +17,8 @@ public class Buttons implements ActionListener {
     private JButton up;
     private JButton down;
     private JButton left;
+
+    private JButton wait;
     private JButton right;
     private JPanel buttonMenu;
 
@@ -49,6 +50,7 @@ public class Buttons implements ActionListener {
         down = new JButton("down");
         left = new JButton("left");
         right = new JButton("right");
+        wait = new JButton("wait");
         // Stworzenie panelu dla przyciskow
         buttonMenu = new JPanel();
         buttonMenu.setPreferredSize(new Dimension(buttonsWidth, buttonsHeigth));
@@ -70,14 +72,16 @@ public class Buttons implements ActionListener {
 
         topPanel.add(up);
         midPanel.add(left);
+        midPanel.add(wait);
         midPanel.add(right);
         botPanel.add(down);
 
         // Ustawienie rozmiaru
-        up.setPreferredSize(new Dimension(100, 75));
-        down.setPreferredSize(new Dimension(100, 75));
-        right.setPreferredSize(new Dimension(100, 75));
-        left.setPreferredSize(new Dimension(100, 75));
+        up.setPreferredSize(new Dimension(75, 75));
+        down.setPreferredSize(new Dimension(75, 75));
+        right.setPreferredSize(new Dimension(75, 75));
+        left.setPreferredSize(new Dimension(75, 75));
+        wait.setPreferredSize(new Dimension(75,75));
 
 
         // Dodanie przyciskow do panelu
@@ -90,6 +94,7 @@ public class Buttons implements ActionListener {
         down.addActionListener(this);
         left.addActionListener(this);
         right.addActionListener(this);
+        wait.addActionListener(this);
 
     }
 
@@ -138,11 +143,10 @@ public class Buttons implements ActionListener {
 
             }
         }
-        if(!nextLvl) {
+        if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
-
 
 
         board.refresh();
@@ -171,7 +175,7 @@ public class Buttons implements ActionListener {
                 //board.changeTo1(wall);
             }
         }
-        if(!nextLvl) {
+        if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
@@ -202,7 +206,7 @@ public class Buttons implements ActionListener {
                 //board.changeTo1(wall);
             }
         }
-        if(!nextLvl) {
+        if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
@@ -233,7 +237,34 @@ public class Buttons implements ActionListener {
                 //board.changeTo1(wall);
             }
         }
-        if(!nextLvl) {
+        if (!nextLvl) {
+            goblin.moveGoblin();
+            board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
+        }
+
+        board.refresh();
+        //board.changeTo1(wall);
+        nextLvl = false;
+    }
+
+    public void stop() {
+        for (int i = 0; i < Goblin.amount; i++) {
+            if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
+                Stats.decreaseHealth();
+                if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
+                    goblin.goblinDies(i);
+
+                } else {
+                    board.changeTo0(goblin.getGoblinPosition()[i]);
+                    goblin.goblinDies(i);
+
+                }
+                Stats.increaseBodyCount();
+                board.refresh();
+                //board.changeTo1(wall);
+            }
+        }
+        if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
@@ -257,6 +288,8 @@ public class Buttons implements ActionListener {
         } else if (e.getSource() == right) {
             moveRight();
             moveCounter++;
+        } else if (e.getSource() == wait) {
+            stop();
         }
     }
 
