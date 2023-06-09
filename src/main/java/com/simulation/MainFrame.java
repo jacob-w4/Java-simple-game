@@ -23,6 +23,7 @@ public class MainFrame  {
 
         }
 
+
     public void start(Stats stats) {
         // Tworzenie glownego okna
         mainFrame = new JFrame("Game");

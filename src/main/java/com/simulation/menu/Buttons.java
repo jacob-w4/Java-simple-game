@@ -8,9 +8,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
-public class Buttons implements ActionListener {
+public class Buttons implements ActionListener{
 
     private final int buttonsHeigth;
     private final int buttonsWidth;
@@ -31,6 +33,12 @@ public class Buttons implements ActionListener {
     private static Board board;
 
     private static boolean nextLvl = false;
+
+    private Action upAction;
+    private Action rightAction;
+    private Action leftAction;
+    private Action downAction;
+    private Action waitAction;
 
 
     public void add(JPanel menu) {
@@ -97,6 +105,29 @@ public class Buttons implements ActionListener {
         right.addActionListener(this);
         wait.addActionListener(this);
 
+
+        upAction = new UpAction();
+        downAction = new DownAction();
+        rightAction = new RightAction();
+        leftAction = new LeftAction();
+        waitAction = new WaitAction();
+
+
+
+        buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('w'),"upAction");
+        buttonMenu.getActionMap().put("upAction",upAction);
+
+        buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('s'),"downAction");
+        buttonMenu.getActionMap().put("downAction",downAction);
+
+        buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('d'),"rightAction");
+        buttonMenu.getActionMap().put("rightAction",rightAction);
+
+        buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('a'),"leftAction");
+        buttonMenu.getActionMap().put("leftAction",leftAction);
+
+        buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('q'),"waitAction");
+        buttonMenu.getActionMap().put("waitAction",waitAction);
     }
 
     public static void nextLvl() {
@@ -296,5 +327,45 @@ public class Buttons implements ActionListener {
 
     public static int getMoveCounter() {
         return moveCounter;
+    }
+
+    private class UpAction extends AbstractAction {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            moveUp();
+            moveCounter++;
+        }
+    }
+    private class DownAction extends AbstractAction {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            moveDown();
+            moveCounter++;
+        }
+    }
+    private class RightAction extends AbstractAction {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            moveRight();
+            moveCounter++;
+        }
+    }
+    private class LeftAction extends AbstractAction {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            moveLeft();
+            moveCounter++;
+        }
+    }
+    private class WaitAction extends AbstractAction {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            stop();
+        }
     }
 }
