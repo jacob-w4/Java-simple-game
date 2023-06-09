@@ -58,7 +58,7 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
         save.setFocusPainted(false);
 
         // Tworzenie napisow przylegajacych do komponentow
-        JLabel nameFieldLabel= new JLabel("Podaj imie: ");
+        JLabel nameFieldLabel= new JLabel("Podaj nazwe gracza: ");
         JLabel sliderLabel = new JLabel("Poziom gry: ");
         difficultyLabel = new JLabel("Sredni");
 
