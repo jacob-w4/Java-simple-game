@@ -20,7 +20,6 @@ public class MainFrame  {
         // Utworzenie pierwszego okna programu
         Settings settings = new Settings(height, width);
         settings.start();
-
         }
 
 
@@ -53,6 +52,7 @@ public class MainFrame  {
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setVisible(true);
 
+        // Start liczenia czasu gry
         startTime = System.currentTimeMillis();
 
     }

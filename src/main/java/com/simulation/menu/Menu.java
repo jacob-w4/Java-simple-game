@@ -20,21 +20,28 @@ public class Menu {
         menuWidth = width;
         this.board = board;
         this.stats = stats;
+        // Wyswietlenie panelu
         display();
     }
 
     public void display() {
+        // Stworzenie panelu glownego
         menu = new JPanel();
         menu.setPreferredSize(new Dimension(menuWidth, menuHeight));
+        // Stworzenie panelu dla przyciskow
         JPanel buttonPanel = new JPanel();
         buttonPanel.setPreferredSize(new Dimension(menuWidth, menuHeight/2));
         stats.setSize(menuHeight,menuWidth/2);
+        // Stworzenie przyciskow
         Buttons buttons = new Buttons(menuHeight / 2, menuWidth, board);
         buttons.add(buttonPanel);
 
         menu.setLayout(new GridLayout(2,1));
+
+        // Dodanie paneli do panelu glownego
         menu.add(stats.getStatsPanel());
         menu.add(buttonPanel);
+
         menu.setVisible(true);
     }
 

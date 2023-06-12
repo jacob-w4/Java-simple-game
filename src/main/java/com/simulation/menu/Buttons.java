@@ -8,8 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 
 public class Buttons implements ActionListener{
@@ -19,26 +17,14 @@ public class Buttons implements ActionListener{
     private JButton up;
     private JButton down;
     private JButton left;
-
     private JButton wait;
     private JButton right;
     private JPanel buttonMenu;
-
     private static int moveCounter;
-
-    public static Player player = new Player();
-
-    public static Goblin goblin = new Goblin();
-
+    private static final Player player = new Player();
+    private static final Goblin goblin = new Goblin();
     private static Board board;
-
     private static boolean nextLvl = false;
-
-    private Action upAction;
-    private Action rightAction;
-    private Action leftAction;
-    private Action downAction;
-    private Action waitAction;
 
 
     public void add(JPanel menu) {
@@ -70,22 +56,21 @@ public class Buttons implements ActionListener{
         JPanel midPanel = new JPanel();
         JPanel botPanel = new JPanel();
 
-
+        // Wylaczenie skupianie na tekscie dla przyciskow
         up.setFocusPainted(false);
         down.setFocusPainted(false);
         right.setFocusPainted(false);
         left.setFocusPainted(false);
         wait.setFocusPainted(false);
 
-        //midPanel.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
-
+        // Dodanie przyciskow do poszczegolnych paneli
         topPanel.add(up);
         midPanel.add(left);
         midPanel.add(wait);
         midPanel.add(right);
         botPanel.add(down);
 
-        // Ustawienie rozmiaru
+        // Ustawienie rozmiarow przyciskow
         up.setPreferredSize(new Dimension(75, 75));
         down.setPreferredSize(new Dimension(75, 75));
         right.setPreferredSize(new Dimension(75, 75));
@@ -93,7 +78,7 @@ public class Buttons implements ActionListener{
         wait.setPreferredSize(new Dimension(75,75));
 
 
-        // Dodanie przyciskow do panelu
+        // Dodanie paneli do panelu glownego
         buttonMenu.add(topPanel);
         buttonMenu.add(midPanel);
         buttonMenu.add(botPanel);
@@ -105,35 +90,32 @@ public class Buttons implements ActionListener{
         right.addActionListener(this);
         wait.addActionListener(this);
 
+        // Tworzenie obiektów odpowiedzialnych za poruszanie sie klawiszami
+        Action upAction = new UpAction();
+        Action downAction = new DownAction();
+        Action rightAction = new RightAction();
+        Action leftAction = new LeftAction();
+        Action waitAction = new WaitAction();
 
-        upAction = new UpAction();
-        downAction = new DownAction();
-        rightAction = new RightAction();
-        leftAction = new LeftAction();
-        waitAction = new WaitAction();
-
-
-
+        // Przypisanie odpowiednich klawiszy i nadanie im funkcjonalosci
         buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('w'),"upAction");
-        buttonMenu.getActionMap().put("upAction",upAction);
-
+        buttonMenu.getActionMap().put("upAction", upAction);
         buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('s'),"downAction");
-        buttonMenu.getActionMap().put("downAction",downAction);
-
+        buttonMenu.getActionMap().put("downAction", downAction);
         buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('d'),"rightAction");
-        buttonMenu.getActionMap().put("rightAction",rightAction);
-
+        buttonMenu.getActionMap().put("rightAction", rightAction);
         buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('a'),"leftAction");
-        buttonMenu.getActionMap().put("leftAction",leftAction);
-
+        buttonMenu.getActionMap().put("leftAction", leftAction);
         buttonMenu.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('q'),"waitAction");
-        buttonMenu.getActionMap().put("waitAction",waitAction);
+        buttonMenu.getActionMap().put("waitAction", waitAction);
     }
 
     public static void nextLvl() {
-        for (int i = 0; i < Goblin.amount; i++) {
+        // Usuniecie pozostalych na planszy przeciwnikow
+        for (int i = 0; i < Goblin.getAmount(); i++) {
             goblin.goblinDies(i);
         }
+        //Zmiana planszy na kolejny poziom
         if (Board.getCurrentLvL() == 2) {
             for (int i = 0; i < 20; i++) {
                 for (int j = 0; j < 20; j++) {
@@ -147,6 +129,7 @@ public class Buttons implements ActionListener{
                 }
             }
         }
+        // Odszukanie nowych pozycji dla gracza i przeciwnikow,i odswiezenie planszy
         player.findPlayerPos();
         goblin.findGoblinPos();
         board.refresh();
@@ -158,31 +141,26 @@ public class Buttons implements ActionListener{
         player.movePlayer(-1, "x");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < Goblin.amount; i++) {
+        for (int i = 0; i < Goblin.getAmount(); i++) {
+            // Atakowanie gracza przez przeciwinkow
             if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
                 if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
-
                 } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
-
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
-                //board.changeTo1(wall);
-
             }
         }
+        // Zmiana pozycji przeciwnika, jezeli nie ma zmiany planszy na kolejny poziom
         if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
-
-
         board.refresh();
-        //board.changeTo1(wall);
         nextLvl = false;
     }
 
@@ -191,29 +169,26 @@ public class Buttons implements ActionListener{
         player.movePlayer(1, "x");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < Goblin.amount; i++) {
+        for (int i = 0; i < Goblin.getAmount(); i++) {
+            // Atakowanie gracza przez przeciwinkow
             if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
                 if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
-
                 } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
-
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
-                //board.changeTo1(wall);
             }
         }
+        // Zmiana pozycji przeciwnika, jezeli nie ma zmiany planszy na kolejny poziom
         if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
-
         board.refresh();
-        //board.changeTo1(wall);
         nextLvl = false;
     }
 
@@ -222,29 +197,27 @@ public class Buttons implements ActionListener{
         player.movePlayer(-1, "y");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < Goblin.amount; i++) {
+        for (int i = 0; i < Goblin.getAmount(); i++) {
+            // Atakowanie gracza przez przeciwinkow
             if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
 
                 if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
-
                 } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
-                //board.changeTo1(wall);
             }
         }
+        // Zmiana pozycji przeciwnika, jezeli nie ma zmiany planszy na kolejny poziom
         if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
-
         board.refresh();
-        //board.changeTo1(wall);
         nextLvl = false;
     }
 
@@ -253,61 +226,56 @@ public class Buttons implements ActionListener{
         player.movePlayer(1, "y");
         // Ustawienie nowej pozycji gracza na planszy
         board.setFieldStateArray(player.getPlayerPosition(), player.getOldPostion());
-        for (int i = 0; i < Goblin.amount; i++) {
+        for (int i = 0; i < Goblin.getAmount(); i++) {
+            // Atakowanie gracza przez przeciwinkow
             if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
                 if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
-
                 } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
-
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
-                //board.changeTo1(wall);
             }
         }
+        // Zmiana pozycji przeciwnika, jezeli nie ma zmiany planszy na kolejny poziom
         if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
-
         board.refresh();
-        //board.changeTo1(wall);
         nextLvl = false;
     }
 
     public void stop() {
-        for (int i = 0; i < Goblin.amount; i++) {
+        for (int i = 0; i < Goblin.getAmount(); i++) {
+            // Atakowanie gracza przez przeciwinkow
             if (Math.abs(player.getPlayerPosition()[0] - goblin.getGoblinPosition()[i][1]) <= 1 && Math.abs(player.getPlayerPosition()[1] - goblin.getGoblinPosition()[i][0]) <= 1) {
                 Stats.decreaseHealth();
                 if (player.getPlayerPosition()[0] == goblin.getGoblinPosition()[i][1] && player.getPlayerPosition()[1] == goblin.getGoblinPosition()[i][0]) {
                     goblin.goblinDies(i);
-
                 } else {
                     board.changeTo0(goblin.getGoblinPosition()[i]);
                     goblin.goblinDies(i);
-
                 }
                 Stats.increaseBodyCount();
                 board.refresh();
-                //board.changeTo1(wall);
             }
         }
+        // Zmiana pozycji przeciwnika, jezeli nie ma zmiany planszy na kolejny poziom
         if (!nextLvl) {
             goblin.moveGoblin();
             board.setFieldStateArray2(goblin.getGoblinPosition(), goblin.getGoblinOldPosition());
         }
-
         board.refresh();
-        //board.changeTo1(wall);
         nextLvl = false;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        // Ruch za pomocą przyciskow
         if (e.getSource() == up) {
             moveUp();
             moveCounter++;
@@ -329,6 +297,7 @@ public class Buttons implements ActionListener{
         return moveCounter;
     }
 
+    // Klasy wewnętrze odpowiedzialne za ruch za pomoca klawiszy
     private class UpAction extends AbstractAction {
 
         @Override

@@ -93,7 +93,6 @@ public class Board {
         boardHeigth = heigth;
         boardWidth = width;
         currentLvL = 1;
-        //display();
     }
 
     public Board() {
@@ -103,12 +102,14 @@ public class Board {
     private JButton[][] boardOfButtons;
 
     public void display() {
+        // Tworzenie panelu i planszy
         board = new JPanel();
         board.setPreferredSize(new Dimension(boardWidth, boardHeigth));
         boardOfButtons = new JButton[20][20];
         board.setBackground(Color.black);
         board.setLayout(new GridLayout(20, 20, 2, 2));
 
+        // Ustawienie pierwszego poziomu na planszy
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (fieldStateArray[i][j] == 1) {
@@ -166,15 +167,12 @@ public class Board {
                 }
             }
         }
-
-
-        // createMap(boardOfButtons);
         board.setVisible(true);
     }
 
 
     public void refresh() {
-
+        // Odswiezanie planszy
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 if (fieldStateArray[i][j] == 1) {
@@ -230,10 +228,10 @@ public class Board {
         return fieldStateArray;
     }
 
+    // Ustawienie nowej pozycji gracza
     public void setFieldStateArray(int[] entityPosition, int[] oldPosition) {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
-
                 if (i == entityPosition[0] && j == entityPosition[1]) {
                     fieldStateArray[i][j] = 2;
                     fieldStateArray[oldPosition[0]][oldPosition[1]] = 0;
@@ -244,8 +242,9 @@ public class Board {
         }
     }
 
+    // Ustawienie nowej pozycji goblinów
     public void setFieldStateArray2(int[][] entityPositions, int[][] oldPosition) {
-        for (int i = 0; i < Goblin.amount; i++) {
+        for (int i = 0; i < Goblin.getAmount(); i++) {
             for (int j = 0; j < 20; j++) {
                 for (int k = 0; k < 20; k++) {
                     if (j == entityPositions[i][0] && k == entityPositions[i][1]) {

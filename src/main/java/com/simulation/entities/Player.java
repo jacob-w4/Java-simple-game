@@ -35,15 +35,20 @@ public class Player extends Entity {
                 oldPostion[1] = playerPosition[1];
                 // Ustawienie nowej pozycji
                 playerPosition[1] += n;
+                // Dodanie zycia do statystyk
                 Stats.increaseHealth();
+
+                // Przejscie na drugą plansze
             } else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 5) {
                 Board.setCurrentLvL(2);
                 boardPosition = Board.getFieldStateArray2();
                 Buttons.nextLvl();
+                // Przejscie na trzecia plansze
             } else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 6) {
                 Board.setCurrentLvL(3);
                 boardPosition = Board.getFieldStateArray3();
                 Buttons.nextLvl();
+                // Wyswietlenie okna wygranej
             } else if (boardPosition[playerPosition[0]][playerPosition[1] + n] == 7) {
                 endScreen.displayWin();
             }

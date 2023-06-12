@@ -17,17 +17,11 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
     private final int width;
     private int difficulty;
     private String name;
-
     private JButton save;
-
     private JSlider slider;
-
     private JTextField nameField;
-
     private JFrame settings;
-
     private Stats stats;
-
     private JLabel difficultyLabel;
 
 
@@ -84,10 +78,10 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
         save.setPreferredSize(new Dimension(200,50));
         nameField.setPreferredSize(new Dimension(200,50));
 
+        // Dodanie funkcjonalnosci do komponentow
         slider.addChangeListener(this);
         save.addActionListener(this);
         nameField.addActionListener(this);
-
         nameField.addKeyListener(this);
         slider.addKeyListener(this);
 
@@ -107,8 +101,8 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == save) {
+            // Po kliknieciu przycisku tworzenie okna glownego
             MainFrame mainFrame = new MainFrame();
-
             name = nameField.getText();
             stats = new Stats(this);
             mainFrame.start(stats);
@@ -118,6 +112,7 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
 
     @Override
     public void stateChanged(ChangeEvent e) {
+        // Zmiana napisu obok suwaka, przy roznych wartosciach
         if (e.getSource() == slider) {
             if(slider.getValue() == 1) {
                 difficultyLabel.setText("Latwy ");
@@ -130,6 +125,7 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
                 difficulty = 3;
             }
         }
+        // Przypisanie wartosci z pola tekstowego
         if (e.getSource() == nameField) {
             name = nameField.getText();
         }
@@ -142,9 +138,9 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        // Stworzenie okna glownego po kliknieciu przycisku "Enter"
         if (e.getKeyCode()==10) {
             MainFrame mainFrame = new MainFrame();
-
             name = nameField.getText();
             stats = new Stats(this);
             mainFrame.start(stats);
