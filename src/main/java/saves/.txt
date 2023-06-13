@@ -1,0 +1,6 @@
+Wygrana
+Nazwa gracza: 
+Poziom trudnosci: Sredni
+Czas gry: 1:15
+Pokonani wrogowie: 8
+Wykonane ruchy: 138
