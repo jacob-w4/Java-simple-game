@@ -139,10 +139,10 @@ public class EndScreen {
         Path path = Paths.get("src/main/java/saves/" + Stats.getName() + ".txt");
         String data;
         if (secondsDisplay <= 9) {
-            data = "Wygrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Poziom trudnosci: " + Stats.getDifficulty() + "\n" + "Czas gry: " + elapsedMinutes + ":0" + secondsDisplay
+            data = "Przegrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Poziom trudnosci: " + Stats.getDifficulty() + "\n" + "Czas gry: " + elapsedMinutes + ":0" + secondsDisplay
                     + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
         } else {
-            data = "Wygrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Poziom trudnosci: " + Stats.getDifficulty() + "\n" + "Czas gry: " + elapsedMinutes + ":" + secondsDisplay
+            data = "Przegrana\n" + "Nazwa gracza: " + Stats.getName() + "\n" + "Poziom trudnosci: " + Stats.getDifficulty() + "\n" + "Czas gry: " + elapsedMinutes + ":" + secondsDisplay
                     + "\n" + "Pokonani wrogowie: " + Stats.getBodyCount().toString() + "\n" + "Wykonane ruchy: " + Buttons.getMoveCounter();
         }
         try {

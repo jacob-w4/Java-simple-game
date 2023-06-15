@@ -1,0 +1,6 @@
+Wygrana
+Nazwa gracza: test1
+Poziom trudnosci: Trudny
+Czas gry: 2:58
+Pokonani wrogowie: 14
+Wykonane ruchy: 531

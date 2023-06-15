@@ -1,0 +1,6 @@
+Wygrana
+Nazwa gracza: test2
+Poziom trudnosci: Latwy
+Czas gry: 0:55
+Pokonani wrogowie: 10
+Wykonane ruchy: 108
