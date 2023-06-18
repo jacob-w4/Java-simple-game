@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-18T18:09:44.076Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="v2bHTcmphUjujpl__Mh8" version="21.3.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-18T18:18:05.285Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="UIjH2q9S9aVSTYpyrslk" version="21.3.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1434" dy="916" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
@@ -104,7 +104,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="xqctljAPMphS5c5I9apy-34" value="Buttons" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="920" y="880" width="250" height="320" as="geometry" />
+          <mxGeometry x="920" y="880" width="250" height="380" as="geometry" />
         </mxCell>
         <mxCell id="xqctljAPMphS5c5I9apy-35" value="- buttonsHeigth: final int&lt;br&gt;- buttonsWidth: final int&lt;br&gt;- up: JButton&lt;br&gt;- down: JButton&lt;br&gt;- left: JButton&lt;br&gt;- wait: JButton&lt;br&gt;- right: JButton&lt;br&gt;- moveCounter: static int&lt;br&gt;- player: static final player&lt;br&gt;- goblin: static final Goblin&lt;br&gt;- board: static Board&lt;br&gt;- nextLvl: static boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xqctljAPMphS5c5I9apy-34">
           <mxGeometry y="26" width="250" height="174" as="geometry" />
@@ -112,10 +112,28 @@
         <mxCell id="xqctljAPMphS5c5I9apy-36" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="xqctljAPMphS5c5I9apy-34">
           <mxGeometry y="200" width="250" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="xqctljAPMphS5c5I9apy-37" value="+ add(JPanel menu)&lt;br&gt;+ Buttons(int heigth, int width, Board board)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xqctljAPMphS5c5I9apy-34">
-          <mxGeometry y="208" width="250" height="112" as="geometry" />
+        <mxCell id="xqctljAPMphS5c5I9apy-37" value="+ add(JPanel menu)&lt;br&gt;+ Buttons(int heigth, int width, Board board)&lt;br&gt;+ start()&lt;br&gt;+ nextLvl()&lt;br&gt;+ moveLeft()&lt;br&gt;+ moveRight()&lt;br&gt;+ moveUp()&lt;br&gt;+ moveDown()&lt;br&gt;+ stop()&lt;br&gt;+ actionPerformed(ActionEvent e)&lt;br&gt;+ getMoveCounter(): static int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xqctljAPMphS5c5I9apy-34">
+          <mxGeometry y="208" width="250" height="172" as="geometry" />
         </mxCell>
         <mxCell id="xqctljAPMphS5c5I9apy-38" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xqctljAPMphS5c5I9apy-23" target="xqctljAPMphS5c5I9apy-34">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1110" y="770" as="sourcePoint" />
+            <mxPoint x="1270" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xqctljAPMphS5c5I9apy-39" value="Menu" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1200" y="880" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="xqctljAPMphS5c5I9apy-40" value="- menuHeight: final int&lt;br&gt;- menuWidth: final int&lt;br&gt;- menu: JPanel&lt;br&gt;- stats: final Stats&lt;br&gt;- board: final Board&lt;br&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xqctljAPMphS5c5I9apy-39">
+          <mxGeometry y="26" width="300" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="xqctljAPMphS5c5I9apy-41" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="xqctljAPMphS5c5I9apy-39">
+          <mxGeometry y="110" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="xqctljAPMphS5c5I9apy-42" value="+ Menu(int heigth, int width, Board board, Stats stats)&lt;br&gt;+ display()&lt;br&gt;+ add(JFrame mainFrame)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xqctljAPMphS5c5I9apy-39">
+          <mxGeometry y="118" width="300" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="xqctljAPMphS5c5I9apy-43" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xqctljAPMphS5c5I9apy-23" target="xqctljAPMphS5c5I9apy-39">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="1110" y="770" as="sourcePoint" />
             <mxPoint x="1270" y="770" as="targetPoint" />
