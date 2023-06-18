@@ -122,8 +122,8 @@ public class Board {
 
     /**
      * Konstruktor główny klasy Board. Ustawia wartości - rozmiar panelu planszy.
-     * @param heigth
-     * @param width
+     * @param heigth wysokość panelu
+     * @param width szerokość panelu
      */
     public Board(int heigth, int width) {
         boardHeigth = heigth;
