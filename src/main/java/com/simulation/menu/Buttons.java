@@ -9,7 +9,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * Klasa tworząca panel przycisków. Zawiera cztery przyciski do poruszania się po planszy i jeden dodatkowy do czekania w miejscu.
+ * Ponadto posiada pięć klas wewnętrzych odpowiedzialnych za poruszanie się za pomocą klawiszy WASD oraz Q (czekanie).
+ * @author Jakub, Marek
+ * @version 1.2.0
+ */
 public class Buttons implements ActionListener{
 
     private final int buttonsHeigth;
@@ -27,10 +32,22 @@ public class Buttons implements ActionListener{
     private static boolean nextLvl = false;
 
 
+    /**
+     * Dodaje panel przycisków do panelu menu.
+     * @param menu panel menu
+     */
     public void add(JPanel menu) {
         menu.add(buttonMenu);
     }
 
+    /**
+     * Konstruktor klasy Buttons. Ustawia wartości atrybutów. Wywołuję metodę która: <br>
+     * 1) tworzy przyciski do poruszania się po mapie <br>
+     * 2) ustawia klawisze również do poruszania się po mapie.
+     * @param heigth wysokość panelu
+     * @param width szerokość panelu
+     * @param board obiekt klasy Board
+     */
     public Buttons(int heigth, int width, Board board) {
         buttonsHeigth = heigth / 2;
         buttonsWidth = width;
@@ -38,6 +55,11 @@ public class Buttons implements ActionListener{
         start();
     }
 
+    /**
+     * Metodę która: <br>
+     * 1) tworzy przyciski do poruszania się po mapie <br>
+     * 2) ustawia klawisze również do poruszania się po mapie.
+     */
     public void start() {
         // Tworzenie przyciskow
         up = new JButton("up");
@@ -110,6 +132,9 @@ public class Buttons implements ActionListener{
         buttonMenu.getActionMap().put("waitAction", waitAction);
     }
 
+    /**
+     * Metoda, która ustawia następną planszę oraz szuka nowych pozycji gracza i goblinów.
+     */
     public static void nextLvl() {
         // Usuniecie pozostalych na planszy przeciwnikow
         for (int i = 0; i < Goblin.getAmount(); i++) {
@@ -136,6 +161,11 @@ public class Buttons implements ActionListener{
         nextLvl = true;
     }
 
+    /**
+     * Porusza graczem w lewo (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
+     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
+     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     */
     public void moveLeft() {
         // Zmiana pozycji gracza w lewo
         player.movePlayer(-1, "x");
@@ -164,6 +194,11 @@ public class Buttons implements ActionListener{
         nextLvl = false;
     }
 
+    /**
+     * Porusza graczem w prawo (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
+     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
+     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     */
     public void moveRight() {
         // Zmiana pozycji gracza w prawo
         player.movePlayer(1, "x");
@@ -192,6 +227,11 @@ public class Buttons implements ActionListener{
         nextLvl = false;
     }
 
+    /**
+     * Porusza graczem w górę (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
+     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
+     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     */
     public void moveUp() {
         // Zmiana pozycji gracza w gore
         player.movePlayer(-1, "y");
@@ -221,6 +261,11 @@ public class Buttons implements ActionListener{
         nextLvl = false;
     }
 
+    /**
+     * Porusza graczem w dół (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
+     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
+     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     */
     public void moveDown() {
         // Zmiana pozycji gracza w dol
         player.movePlayer(1, "y");
@@ -249,6 +294,11 @@ public class Buttons implements ActionListener{
         nextLvl = false;
     }
 
+    /**
+     * Zmienia losowo pozycję goblinów.
+     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
+     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     */
     public void stop() {
         for (int i = 0; i < Goblin.getAmount(); i++) {
             // Atakowanie gracza przez przeciwinkow
@@ -293,11 +343,17 @@ public class Buttons implements ActionListener{
         }
     }
 
+    /**
+     * Zwraca liczbę wykonanych ruchów.
+     * @return liczba wykonanych ruchów
+     */
     public static int getMoveCounter() {
         return moveCounter;
     }
 
-    // Klasy wewnętrze odpowiedzialne za ruch za pomoca klawiszy
+    /**
+     * Klasa wewnętrzna odpowiedzialna za ruch do góry za pomoca klawisza.
+     */
     private class UpAction extends AbstractAction {
 
         @Override
@@ -306,6 +362,9 @@ public class Buttons implements ActionListener{
             moveCounter++;
         }
     }
+    /**
+     * Klasa wewnętrzna odpowiedzialna za ruch w dół za pomoca klawisza.
+     */
     private class DownAction extends AbstractAction {
 
         @Override
@@ -314,6 +373,9 @@ public class Buttons implements ActionListener{
             moveCounter++;
         }
     }
+    /**
+     * Klasa wewnętrzna odpowiedzialna za ruch w prawo za pomoca klawisza.
+     */
     private class RightAction extends AbstractAction {
 
         @Override
@@ -322,6 +384,9 @@ public class Buttons implements ActionListener{
             moveCounter++;
         }
     }
+    /**
+     * Klasa wewnętrzna odpowiedzialna za ruch w lewo za pomoca klawisza.
+     */
     private class LeftAction extends AbstractAction {
 
         @Override
@@ -330,6 +395,9 @@ public class Buttons implements ActionListener{
             moveCounter++;
         }
     }
+    /**
+     * Klasa wewnętrzna odpowiedzialna za stanie w miejscu za pomoca klawisza.
+     */
     private class WaitAction extends AbstractAction {
 
         @Override
