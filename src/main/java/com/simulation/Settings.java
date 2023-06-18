@@ -12,6 +12,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
+/**
+ * Klasa tworząca pierwsze okno programu. Zawiera początkowe ustawienia gry.
+ * @author Jakub, Marek
+ * @version 1.2.0
+ */
 public class Settings implements ActionListener, ChangeListener, KeyListener {
     private final int heigth;
     private final int width;
@@ -25,12 +30,19 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
     private JLabel difficultyLabel;
 
 
+    /**
+     * Przypisuje wartości początkowe.
+     * @param heigth wysokość okna
+     * @param width szerokość okna
+     */
     public Settings(int heigth, int width) {
             this.heigth = heigth/2;
             this.width = width/3;
-
     }
 
+    /**
+     * Tworzy okno główne zawierajace: pole tekstowe, suwak do zmiany poziomu trudności gry, oraz przycisk do zapisania wybranych/wpisanych ustawień.
+     */
     public void start() {
 
         // Tworzenie okna ustawien
@@ -89,10 +101,21 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
         settings.setVisible(true);
     }
 
+    /**
+     * Metoda zwracająca nazwę gracza
+     * @return nazwa gracza
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Metoda zwracająca poziom trudności: <br>
+     *  1 - Latwy <br>
+     *  2 - Sredni <br>
+     *  3 - Trudny
+     * @return poziom trudności (liczba 1-3)
+     */
     public int getDifficulty() {
         return difficulty;
     }

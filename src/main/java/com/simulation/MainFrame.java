@@ -7,6 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 
 
+/**
+ * Klasa tworząca główne okno programu. Zawiera dwa panele: menu oraz plansze po której toczy się gra.
+ * @author Jakub, Marek
+ * @version 1.2.0
+ */
 public class MainFrame  {
 
     private final static int height = 1000;
@@ -16,6 +21,9 @@ public class MainFrame  {
 
     private static long startTime;
 
+    /**
+     * Rozpoczyna program.
+     */
     public static void main(String[] args) {
         // Utworzenie pierwszego okna programu
         Settings settings = new Settings(height, width);
@@ -23,6 +31,10 @@ public class MainFrame  {
         }
 
 
+    /**
+     * Tworzy okno główne gry, składające się z dwóch paneli: planszy oraz menu.
+     * @param stats obiekt klasy Stats
+     */
     public void start(Stats stats) {
         // Tworzenie glownego okna
         mainFrame = new JFrame("Game");
@@ -57,10 +69,17 @@ public class MainFrame  {
 
     }
 
+    /**
+     * Zamyka okno główne gry.
+     */
     public static void dispose() {
         mainFrame.dispose();
     }
 
+    /**
+     * Metoda zwracająca czas startu gry.
+     * @return czas startu gry (okna mainFrame)
+     */
     public static long getStartTime() {
         return startTime;
     }
