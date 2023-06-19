@@ -8,6 +8,10 @@ import com.simulation.menu.Stats;
 import javax.swing.*;
 import java.util.Objects;
 
+/**
+ * Klasa dziedzicząca po klasie {@link Entity}. Odpowiada za graficzną reprezentację gracza na planszy.
+ * Razem z klasą {@link Buttons} umożliwia poruszanie się za pomocą przycisków oraz klawiszy WASD.
+ */
 public class Player extends Entity {
 
     private final int[] playerPosition = new int[2];
@@ -15,10 +19,24 @@ public class Player extends Entity {
     private final static ImageIcon playerIcon = new ImageIcon("src/main/java/res/miner64.png");
     private final EndScreen endScreen = new EndScreen();
 
+    /**
+     * Konstruktor klasy {@link Player}, odpowiedzialny za znalezienie pozycji gracza na planszy (tablicy dwuwymiarowej).
+     * @see Player#findPlayerPos()
+     */
     public Player() {
         findPlayerPos();
     }
 
+    /**
+     * Zmienia pozycje gracza zgodnie z podanymi parametrami. Gracz może poruszać się w cztery strony -
+     * np. podając parametry: x = -1 , dir = "x" poruszamy graczem o jedno pole w lewo.
+     * Ponadto, po wejściu na określone pole (o odpowiedniej cyfrze) wykonywana jest następująca czynność: <br>
+     * 3 - życie - {@link Stats#increaseHealth()}<br>
+     * 5,6 - diament - {@link Buttons#nextLvl()} <br>
+     * 7 - puchar - {@link EndScreen#displayWin()}
+     * @param n ilość pól (1 lub -1)
+     * @param dir kierunek ("x" lub "y")
+     */
     public void movePlayer(int n, String dir) {
         if (Objects.equals(dir, "x")) {
             // Zmiana pozycji x'owej gracza jezeli pole ma wartosc 0
@@ -92,6 +110,10 @@ public class Player extends Entity {
         }
     }
 
+    /**
+     * Znajduje pozycje gracza na planszy i przypisuje ją do zmiennej w postaci tablicy dwuelementowej, gdzie
+     * pierwszy element to pozycja na 'y' ,a drugi na 'x'.
+     */
     public void findPlayerPos() {
         // Szukanie pozycji gracza (2) na planszy i przypisanie do zmiennej
         for (int i = 0; i < 20; i++) {
@@ -104,14 +126,25 @@ public class Player extends Entity {
         }
     }
 
+    /**
+     * @return pozycja gracz - tablica dwuelementowa
+     * @see Player#findPlayerPos()
+     */
     public int[] getPlayerPosition() {
         return playerPosition;
     }
 
+    /**
+     * @return stara pozycja gracza - tablica dwuelemetowa
+     */
     public int[] getOldPostion() {
         return oldPostion;
     }
 
+    /**
+     * Graficzna reprezentacja gracza.
+     * @return ikona gracza
+     */
     public static ImageIcon getPlayerIcon() {
         return playerIcon;
     }

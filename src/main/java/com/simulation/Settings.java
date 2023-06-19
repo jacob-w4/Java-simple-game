@@ -102,7 +102,6 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
     }
 
     /**
-     * Metoda zwracająca nazwę gracza
      * @return nazwa gracza
      */
     public String getName() {

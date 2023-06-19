@@ -35,6 +35,7 @@ public class Buttons implements ActionListener{
     /**
      * Dodaje panel przycisków do panelu menu.
      * @param menu panel menu
+     * @see Menu
      */
     public void add(JPanel menu) {
         menu.add(buttonMenu);
@@ -47,6 +48,7 @@ public class Buttons implements ActionListener{
      * @param heigth wysokość panelu
      * @param width szerokość panelu
      * @param board obiekt klasy Board
+     * @see Board
      */
     public Buttons(int heigth, int width, Board board) {
         buttonsHeigth = heigth / 2;
@@ -134,6 +136,8 @@ public class Buttons implements ActionListener{
 
     /**
      * Metoda, która ustawia następną planszę oraz szuka nowych pozycji gracza i goblinów.
+     * @see Player#findPlayerPos()
+     * @see Goblin#findGoblinPos()
      */
     public static void nextLvl() {
         // Usuniecie pozostalych na planszy przeciwnikow
@@ -165,6 +169,9 @@ public class Buttons implements ActionListener{
      * Porusza graczem w lewo (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
      * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
      * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * @see Player#movePlayer(int, String)
+     * @see Goblin#moveGoblin()
+     * @see Goblin#goblinDies(int)
      */
     public void moveLeft() {
         // Zmiana pozycji gracza w lewo
@@ -198,6 +205,9 @@ public class Buttons implements ActionListener{
      * Porusza graczem w prawo (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
      * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
      * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * @see Player#movePlayer(int, String)
+     * @see Goblin#moveGoblin()
+     * @see Goblin#goblinDies(int)
      */
     public void moveRight() {
         // Zmiana pozycji gracza w prawo
@@ -231,6 +241,9 @@ public class Buttons implements ActionListener{
      * Porusza graczem w górę (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
      * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
      * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * @see Player#movePlayer(int, String)
+     * @see Goblin#moveGoblin()
+     * @see Goblin#goblinDies(int)
      */
     public void moveUp() {
         // Zmiana pozycji gracza w gore
@@ -265,6 +278,9 @@ public class Buttons implements ActionListener{
      * Porusza graczem w dół (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
      * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
      * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * @see Player#movePlayer(int, String)
+     * @see Goblin#moveGoblin()
+     * @see Goblin#goblinDies(int)
      */
     public void moveDown() {
         // Zmiana pozycji gracza w dol
@@ -298,6 +314,8 @@ public class Buttons implements ActionListener{
      * Zmienia losowo pozycję goblinów.
      * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
      * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * @see Goblin#moveGoblin()
+     * @see Goblin#goblinDies(int)
      */
     public void stop() {
         for (int i = 0; i < Goblin.getAmount(); i++) {
@@ -344,7 +362,6 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Zwraca liczbę wykonanych ruchów.
      * @return liczba wykonanych ruchów
      */
     public static int getMoveCounter() {

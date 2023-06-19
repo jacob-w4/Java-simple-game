@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Klasa tworząca panel planszy na której toczy się gra. Zawiera trzy różne plansze.
+ * Klasa tworząca panel planszy na której toczy się gra. Zawiera trzy różne plansze. Łączy back-end z front-endem i stanowi główną część programu.
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -215,7 +215,8 @@ public class Board {
 
 
     /**
-     * Metoda odswieżająca planszę. Zmienia ikony oraz kolory przycisków.
+     * Metoda odswieżająca planszę. Odpowiada za reprezentację graficzną obiektów.
+     * Zmienia ikony oraz kolory przycisków na odpowiednich polach.
      */
     public void refresh() {
         // Odswiezanie planszy
@@ -276,7 +277,7 @@ public class Board {
 
     /**
      * Zwraca calą pierwszą planszę w postaci tablicy dwuwymiarowej (macierzy).
-     * @return pierwsza plansza (tablica dwuwymiarowa)
+     * @return {@link Board#fieldStateArray}
      */
     public int[][] getFieldStateArray() {
         return fieldStateArray;
@@ -286,6 +287,7 @@ public class Board {
      * Ustawienie nowej pozycji gracza na planszy.
      * @param entityPosition nowa pozycja gracza
      * @param oldPosition stara pozycja gracza
+     * @see Player#movePlayer(int, String)
      */
     public void setFieldStateArray(int[] entityPosition, int[] oldPosition) {
         for (int i = 0; i < 20; i++) {
@@ -304,6 +306,7 @@ public class Board {
      * Ustawienie nowej pozycji goblinów na planszy.
      * @param entityPositions nowa pozycja goblinów
      * @param oldPosition stara pozycja goblinów
+     * @see Goblin#moveGoblin()
      */
     public void setFieldStateArray2(int[][] entityPositions, int[][] oldPosition) {
         for (int i = 0; i < Goblin.getAmount(); i++) {
@@ -322,7 +325,7 @@ public class Board {
     }
 
     /**
-     * Ustawia podaną pozycje na plnaszy na wartość 0 (białe pole po którym można chodzić)
+     * Ustawia podaną pozycje na planszy na wartość 0 (białe pole po którym można chodzić)
      * @param position pozycja
      */
     public void changeTo0(int[] position) {
@@ -331,7 +334,7 @@ public class Board {
 
     /**
      * Zwraca calą drugą planszę w postaci tablicy dwuwymiarowej (macierzy).
-     * @return druga plansza (tablica dwuwymiarowa)
+     * @return {@link Board#fieldStateArray2}
      */
     public static int[][] getFieldStateArray2() {
         return fieldStateArray2;
@@ -339,14 +342,14 @@ public class Board {
 
     /**
      * Zwraca calą trzecią planszę w postaci tablicy dwuwymiarowej (macierzy).
-     * @return trzecia plansza (tablica dwuwymiarowa)
+     * @return {@link Board#fieldStateArray3}
      */
     public static int[][] getFieldStateArray3() {
         return fieldStateArray3;
     }
 
     /**
-     * Metoda ustawiająca aktualną planszę.
+     * Wartość od 1 do 3.
      * @param currentLvL aktualna plansza (poziom)
      */
     public static void setCurrentLvL(int currentLvL) {
@@ -354,7 +357,7 @@ public class Board {
     }
 
     /**
-     * Metoda zwracająca aktualną planszę.
+     * Wartość od 1 do 3
      * @return aktualna plansza (poziom)
      */
     public static int getCurrentLvL() {

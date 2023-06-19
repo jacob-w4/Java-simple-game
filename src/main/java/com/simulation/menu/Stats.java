@@ -132,7 +132,6 @@ public class Stats {
     }
 
     /**
-     * Metoda zwrająca liczbę pokonanych przeciwników.
      * @return liczba pokonanych przeciwników
      */
     public static Integer getBodyCount() {
