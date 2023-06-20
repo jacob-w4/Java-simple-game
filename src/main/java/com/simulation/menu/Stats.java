@@ -6,7 +6,7 @@ import com.simulation.Settings;
 import javax.swing.*;
 import java.awt.*;
 /**
- * Klasa tworząca panel zawierający statystyki takie jak: życie gracza, pokonani przeciwnicy, nazwa gracza, poziom trudności
+ * Klasa tworzaca panel zawierajacy statystyki takie jak: zycie gracza, pokonani przeciwnicy, nazwa gracza, poziom trudnosci
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -21,8 +21,8 @@ public class Stats {
     private static String difficulty;
 
     /**
-     * Konstruktor klasy Stats. Tworzy panel zawierający punkty życia gracza, nazwę gracza oraz liczbe pokonanych wrogów.<br>
-     * Ustawia początkowe życie gracza na podstawie ustawień z klasy Settings.
+     * Konstruktor klasy Stats. Tworzy panel zawierajacy punkty zycia gracza, nazwe gracza oraz liczbe pokonanych wrogow.<br>
+     * Ustawia poczatkowe zycie gracza na podstawie ustawien z klasy Settings.
      * @param settings obiekt klasy Settings
      */
     public Stats(Settings settings) {
@@ -82,7 +82,6 @@ public class Stats {
     }
 
     /**
-     * Metoda zwaracająca nazwę gracza.
      * @return nazwa gracza
      */
     public static String getName() {
@@ -90,15 +89,14 @@ public class Stats {
     }
 
     /**
-     * Metoda zwaracająca panel statystyk.
-     * @return panel zawierający statystyki
+     * @return panel zawierajacy statystyki
      */
     public JPanel getStatsPanel() {
         return statsPanel;
     }
 
     /**
-     * Metoda ustawiająca wysokość i szerokość panelu.
+     * Metoda ustawiajaca wysokosc i szerokosc panelu.
      * @param heigth wysokość panelu
      * @param width szerokość panelu
      */
@@ -107,8 +105,8 @@ public class Stats {
     }
 
     /**
-     * Zwiększa wartość parametru health o jeden. <br>
-     * Ustawia nową wartość w panelu.
+     * Zwieksza wartosc parametru health o jeden. <br>
+     * Ustawia nowa wartosc w panelu.
      */
     public static void increaseHealth() {
         // Zwiekszanie zycia
@@ -117,9 +115,9 @@ public class Stats {
     }
 
     /**
-     * Zmniejsza wartość parametru health o jeden.
-     * Ustawia nową wartość w panelu. <br>
-     * Wyświetla okno końcowe (przegrana) gdy wartość parametru health równa jest zeru.
+     * Zmniejsza wartosc parametru health o jeden.
+     * Ustawia nową wartosc w panelu. <br>
+     * Wyswietla okno koncowe (przegrana) gdy wartość parametru health rowna jest zeru.
      */
     public static void decreaseHealth() {
         // Zmniejszanie zycia
@@ -132,15 +130,16 @@ public class Stats {
     }
 
     /**
-     * @return liczba pokonanych przeciwników
+     * Metoda zwrajaca liczbe pokonanych przeciwnikow.
+     * @return liczba pokonanych przeciwnikow
      */
     public static Integer getBodyCount() {
         return bodyCount;
     }
 
     /**
-     * Zwiększa wartość liczbę pokonanych przeciwników o jeden.
-     * Ustawia nową wartość w panelu.
+     * Zwieksza wartosc liczbe pokonanych przeciwnikow o jeden.
+     * Ustawia nowa wartosc w panelu.
      */
     public static void increaseBodyCount() {
         // Dodanie pokonanego wroga do licznika
@@ -149,11 +148,11 @@ public class Stats {
     }
 
     /**
-     * Metoda zwracająca poziom trudności: <br>
+     * Metoda zwracajaca poziom trudnosci: <br>
      * 1 - Latwy <br>
      * 2 - Sredni <br>
      * 3 - Trudny
-     * @return poziom trudności (1-3)
+     * @return poziom trudnosci (1-3)
      */
     public static String getDifficulty() {
         return difficulty;

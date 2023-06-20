@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Klasa tworząca panel menu na której znajdują dwa inne panele: panel przycisków oraz statystyk.
+ * Klasa tworzaca panel menu na ktorej znajduja dwa inne panele: panel przyciskow oraz statystyk.
  * @author Jakub, Marek
  * @version 1.2.0
  * @see Buttons
@@ -20,9 +20,9 @@ public class Menu {
     private final Board board;
 
     /**
-     * Konstruktor klasy Menu. Ustawia wartości atrybutów oraz wywołuje metodę tworzącą panel - {@link Menu#display()}.
-     * @param heigth wysokość panelu
-     * @param width szerokość panelu
+     * Konstruktor klasy Menu. Ustawia wartosci atrybutow oraz wywoluje metode tworzaca panel - {@link Menu#display()}.
+     * @param heigth wysokosc panelu
+     * @param width szerokosc panelu
      * @param board obiekt klasy Board
      * @param stats obiekt klasy Stats
      */
@@ -36,7 +36,7 @@ public class Menu {
     }
 
     /**
-     * Tworzy panel menu oraz dodaje do niego panele: przcisków oraz statystyk.
+     * Tworzy panel menu oraz dodaje do niego panele: przciskow oraz statystyk.
      * @see Buttons#add(JPanel)
      * @see Stats#getStatsPanel()
      */
@@ -62,8 +62,8 @@ public class Menu {
     }
 
     /**
-     * Dodaje panel menu do okna głównego progamu (z klasy MainFrame).
-     * @param mainFrame okno główne programu
+     * Dodaje panel menu do okna głownego progamu (z klasy MainFrame).
+     * @param mainFrame okno glowne programu
      * @see com.simulation.MainFrame
      */
     public void add(JFrame mainFrame) {

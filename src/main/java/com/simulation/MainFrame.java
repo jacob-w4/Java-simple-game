@@ -34,7 +34,7 @@ public class MainFrame  {
 
 
     /**
-     * Tworzy okno głowne gry, skladajace sie z dwoch paneli: planszy oraz menu.
+     * Tworzy okno glowne gry, skladajace sie z dwoch paneli: planszy oraz menu.
      * @param stats obiekt klasy Stats
      * @see Board
      * @see Menu

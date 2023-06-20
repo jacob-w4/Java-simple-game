@@ -13,7 +13,7 @@ import java.awt.event.KeyListener;
 
 
 /**
- * Klasa tworząca pierwsze okno programu. Zawiera początkowe ustawienia gry.
+ * Klasa tworzaca pierwsze okno programu. Zawiera poczatkowe ustawienia gry.
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -31,7 +31,7 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
 
 
     /**
-     * Przypisuje wartości początkowe.
+     * Przypisuje wartosci poczatkowe.
      * @param heigth wysokość okna
      * @param width szerokość okna
      */
@@ -41,7 +41,7 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
     }
 
     /**
-     * Tworzy okno główne zawierajace: pole tekstowe, suwak do zmiany poziomu trudności gry, oraz przycisk do zapisania wybranych/wpisanych ustawień.
+     * Tworzy okno glowne zawierajace: pole tekstowe, suwak do zmiany poziomu trudnosci gry, oraz przycisk do zapisania wybranych/wpisanych ustawien.
      */
     public void start() {
 
@@ -109,11 +109,11 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
     }
 
     /**
-     * Metoda zwracająca poziom trudności: <br>
+     * Metoda zwracajaca poziom trudnosci: <br>
      *  1 - Latwy <br>
      *  2 - Sredni <br>
      *  3 - Trudny
-     * @return poziom trudności (liczba 1-3)
+     * @return poziom trudnosci (liczba 1-3)
      */
     public int getDifficulty() {
         return difficulty;

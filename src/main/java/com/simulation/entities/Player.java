@@ -9,8 +9,8 @@ import javax.swing.*;
 import java.util.Objects;
 
 /**
- * Klasa dziedzicząca po klasie {@link Entity}. Odpowiada za graficzną reprezentację gracza na planszy.
- * Razem z klasą {@link Buttons} umożliwia poruszanie się za pomocą przycisków oraz klawiszy WASD.
+ * Klasa dziedziczaca po klasie {@link Entity}. Odpowiada za graficzna reprezentacje gracza na planszy.
+ * Razem z klasa {@link Buttons} umożliwia poruszanie sie za pomoca przyciskow oraz klawiszy WASD.
  */
 public class Player extends Entity {
 
@@ -28,13 +28,13 @@ public class Player extends Entity {
     }
 
     /**
-     * Zmienia pozycje gracza zgodnie z podanymi parametrami. Gracz może poruszać się w cztery strony -
-     * np. podając parametry: x = -1 , dir = "x" poruszamy graczem o jedno pole w lewo.
-     * Ponadto, po wejściu na określone pole (o odpowiedniej cyfrze) wykonywana jest następująca czynność: <br>
-     * 3 - życie - {@link Stats#increaseHealth()}<br>
+     * Zmienia pozycje gracza zgodnie z podanymi parametrami. Gracz moze poruszac sie w cztery strony -
+     * np. podajac parametry: x = -1 , dir = "x" poruszamy graczem o jedno pole w lewo.
+     * Ponadto, po wejsciu na okreslone pole (o odpowiedniej cyfrze) wykonywana jest następujaca czynnosc: <br>
+     * 3 - zycie - {@link Stats#increaseHealth()}<br>
      * 5,6 - diament - {@link Buttons#nextLvl()} <br>
      * 7 - puchar - {@link EndScreen#displayWin()}
-     * @param n ilość pól (1 lub -1)
+     * @param n ilosc pol (1 lub -1)
      * @param dir kierunek ("x" lub "y")
      */
     public void movePlayer(int n, String dir) {
@@ -111,7 +111,7 @@ public class Player extends Entity {
     }
 
     /**
-     * Znajduje pozycje gracza na planszy i przypisuje ją do zmiennej w postaci tablicy dwuelementowej, gdzie
+     * Znajduje pozycje gracza na planszy i przypisuje ja do zmiennej w postaci tablicy dwuelementowej, gdzie
      * pierwszy element to pozycja na 'y' ,a drugi na 'x'.
      */
     public void findPlayerPos() {

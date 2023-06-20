@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Klasa dziedzicząca po klasie {@link Entity}. Odpowiada za graficzną reprezentację gracza na planszy.
- * Razem z klasą {@link com.simulation.menu.Buttons} umożliwia poruszanie się na planszy.
+ * Klasa dziedziczaca po klasie {@link Entity}. Odpowiada za graficzna reprezentacje gracza na planszy.
+ * Razem z klasa {@link com.simulation.menu.Buttons} umozliwia poruszanie sie na planszy.
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -20,7 +20,7 @@ public class Goblin extends Entity {
     private final static ImageIcon goblinIcon = new ImageIcon("src/main/java/res/goblin.png");
 
     /**
-     * Konstruktor klasy {@link Goblin} odpowiedzialny za znalezienie pozycji wszystkich goblinów, oraz przypisanie ich do tablicy dwuwymiarowej.
+     * Konstruktor klasy {@link Goblin} odpowiedzialny za znalezienie pozycji wszystkich goblinow, oraz przypisanie ich do tablicy dwuwymiarowej.
      * @see Goblin#findGoblinPos()
      */
     public Goblin() {
@@ -28,8 +28,8 @@ public class Goblin extends Entity {
     }
 
     /**
-     * Metoda odpowiedzialna za losowanie ruchu dla każdego goblina.
-     * Losuje liczbę z przedziału od 0 do 3 (4 możliwe ruchy), następnie zmienia pozycje goblina pod warunkiem, że wylosowane pole jest polem wolnym.
+     * Metoda odpowiedzialna za losowanie ruchu dla kazdego goblina.
+     * Losuje liczbe z przedziału od 0 do 3 (4 mozliwe ruchy), nastepnie zmienia pozycje goblina pod warunkiem, ze wylosowane pole jest polem wolnym.
      * Gdy wylosowane pole nie jest wolne, goblin nie zmienia pozycji.
      */
     public void moveGoblin() {
@@ -78,7 +78,7 @@ public class Goblin extends Entity {
     }
 
     /**
-     * Metoda polega na zmianie pozycji goblina na sam róg mapy, gdzie nie jest możliwe, aby się poruszał (otoczony jest ścianami).
+     * Metoda polega na zmianie pozycji goblina na sam rog mapy, gdzie nie jest mozliwe, aby sie poruszal (otoczony jest scianami).
      * @param i number goblina
      */
     public void goblinDies(int i) {
@@ -92,8 +92,8 @@ public class Goblin extends Entity {
     ArrayList<Integer[]> positionsOfGoblins = new ArrayList<>();
 
     /**
-     * Metoda odpowiedzialna za znalezienie pozycji goblinów na planszy.
-     * Przeszukuje dwuwymiarową tablice i przypisuje wartości do nowej tablicy, zawierającej same pozycje.
+     * Metoda odpowiedzialna za znalezienie pozycji goblinow na planszy.
+     * Przeszukuje dwuwymiarowa tablice i przypisuje wartosci do nowej tablicy, zawierajacej same pozycje.
      */
     public void findGoblinPos() {
         if (Board.getCurrentLvL() == 2) {
@@ -119,14 +119,14 @@ public class Goblin extends Entity {
     }
 
     /**
-     * @return tablica pozycji goblinów
+     * @return tablica pozycji goblinow
      */
     public int[][] getGoblinPosition() {
         return goblinPosition;
     }
 
     /**
-     * @return tablica starych pozycji goblinów
+     * @return tablica starych pozycji goblinow
      */
     public int[][] getGoblinOldPosition() {
         return goblinOldPosition;
@@ -140,7 +140,7 @@ public class Goblin extends Entity {
     }
 
     /**
-     * @return liczba goblinów
+     * @return liczba goblinow
      */
     public static int getAmount() {
         return amount;

@@ -166,8 +166,8 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Porusza graczem w lewo (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
-     * Usuwa goblinow z planszy gdy zaatakują gracza, odejmuje zycie gracza.
+     * Porusza graczem w lewo (pod warunkiem, ze nie jest to ściana) oraz zmienia losowo pozycje goblinow.
+     * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
      * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)
      * @see Goblin#moveGoblin()
@@ -202,9 +202,9 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Porusza graczem w prawo (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
-     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
-     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * Porusza graczem w prawo (pod warunkiem, ze nie jest to ściana) oraz zmienia losowo pozycje goblinow.
+     * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
+     * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)
      * @see Goblin#moveGoblin()
      * @see Goblin#goblinDies(int)
@@ -238,9 +238,9 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Porusza graczem w górę (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
-     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
-     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * Porusza graczem w gorę (pod warunkiem, ze nie jest to sciana) oraz zmienia losowo pozycje goblinow.
+     * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
+     * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)
      * @see Goblin#moveGoblin()
      * @see Goblin#goblinDies(int)
@@ -275,9 +275,9 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Porusza graczem w dół (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
-     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
-     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * Porusza graczem w dol (pod warunkiem, ze nie jest to sciana) oraz zmienia losowo pozycje goblinow.
+     * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
+     * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)
      * @see Goblin#moveGoblin()
      * @see Goblin#goblinDies(int)
@@ -402,7 +402,7 @@ public class Buttons implements ActionListener{
         }
     }
     /**
-     * Klasa wewnętrzna odpowiedzialna za ruch w lewo za pomoca klawisza.
+     * Klasa wewnetrzna odpowiedzialna za ruch w lewo za pomoca klawisza.
      */
     private class LeftAction extends AbstractAction {
 
@@ -413,7 +413,7 @@ public class Buttons implements ActionListener{
         }
     }
     /**
-     * Klasa wewnętrzna odpowiedzialna za stanie w miejscu za pomoca klawisza.
+     * Klasa wewnetrzna odpowiedzialna za stanie w miejscu za pomoca klawisza.
      */
     private class WaitAction extends AbstractAction {
 

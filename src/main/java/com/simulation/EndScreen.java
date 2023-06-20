@@ -13,8 +13,8 @@ import java.nio.file.Paths;
 
 
 /**
- * Klasa tworząca okno końcowe programu.
- * Zawiera dwie metody odpowiedzialne za wyświetlanie wyników gry oraz jedną której celem jest obliczenie czasu gry.
+ * Klasa tworzaca okno koncowe programu.
+ * Zawiera dwie metody odpowiedzialne za wyswietlanie wynikow gry oraz jedna ktorej celem jest obliczenie czasu gry.
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -24,7 +24,7 @@ public class EndScreen {
     private long elapsedMinutes;
 
     /**
-     * Tworzy okno wyświetlające statystyki wygranej gry oraz zapisuje je do plików .txt pod nazwą gracza - wprowadzoną na początku gry.
+     * Tworzy okno wyswietlające statystyki wygranej gry oraz zapisuje je do plikow .txt pod nazwa gracza - wprowadzona na początku gry.
      */
     public void displayWin() {
         // Tworzenie okna
@@ -95,7 +95,7 @@ public class EndScreen {
     }
 
     /**
-     * Tworzy okno wyświetlające statystyki przegranej gry oraz zapisuje je do plików .txt pod nazwą gracza - wprowadzoną na początku gry.
+     * Tworzy okno wyswietlajace statystyki przegranej gry oraz zapisuje je do plikow .txt pod nazwa gracza - wprowadzona na poczatku gry.
      */
     public void displayLose() {
         // Tworzenie okna
@@ -166,7 +166,7 @@ public class EndScreen {
     }
 
     /**
-     * Metoda obliczająca czas gry.
+     * Metoda obliczajaca czas gry.
      * @see MainFrame#getStartTime()
      */
     public void timer() {
