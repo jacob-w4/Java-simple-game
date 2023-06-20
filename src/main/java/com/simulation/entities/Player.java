@@ -30,7 +30,7 @@ public class Player extends Entity {
     /**
      * Zmienia pozycje gracza zgodnie z podanymi parametrami. Gracz moze poruszac sie w cztery strony -
      * np. podajac parametry: x = -1 , dir = "x" poruszamy graczem o jedno pole w lewo.
-     * Ponadto, po wejsciu na okreslone pole (o odpowiedniej cyfrze) wykonywana jest następujaca czynnosc: <br>
+     * Ponadto, po wejsciu na okreslone pole (o odpowiedniej cyfrze) wykonywana jest nastepujaca czynnosc: <br>
      * 3 - zycie - {@link Stats#increaseHealth()}<br>
      * 5,6 - diament - {@link Buttons#nextLvl()} <br>
      * 7 - puchar - {@link EndScreen#displayWin()}

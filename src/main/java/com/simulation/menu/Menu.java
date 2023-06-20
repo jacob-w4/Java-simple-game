@@ -62,7 +62,7 @@ public class Menu {
     }
 
     /**
-     * Dodaje panel menu do okna głownego progamu (z klasy MainFrame).
+     * Dodaje panel menu do okna glownego progamu (z klasy MainFrame).
      * @param mainFrame okno glowne programu
      * @see com.simulation.MainFrame
      */

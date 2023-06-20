@@ -32,8 +32,8 @@ public class Settings implements ActionListener, ChangeListener, KeyListener {
 
     /**
      * Przypisuje wartosci poczatkowe.
-     * @param heigth wysokość okna
-     * @param width szerokość okna
+     * @param heigth wysokosc okna
+     * @param width szerokosc okna
      */
     public Settings(int heigth, int width) {
             this.heigth = heigth/2;

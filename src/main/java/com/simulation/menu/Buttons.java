@@ -42,7 +42,7 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Konstruktor klasy Buttons. Ustawia wartosci atrybutow. Wywoluję metode ktora: <br>
+     * Konstruktor klasy Buttons. Ustawia wartosci atrybutow. Wywoluje metode ktora: <br>
      * 1) tworzy przyciski do poruszania sie po mapie <br>
      * 2) ustawia klawisze rowniez do poruszania sie po mapie.
      * @param heigth wysokosc panelu
@@ -135,7 +135,7 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Metoda, ktora ustawia następna plansze oraz szuka nowych pozycji gracza i goblinow.
+     * Metoda, ktora ustawia nastepna plansze oraz szuka nowych pozycji gracza i goblinow.
      * @see Player#findPlayerPos()
      * @see Goblin#findGoblinPos()
      */
@@ -166,7 +166,7 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Porusza graczem w lewo (pod warunkiem, ze nie jest to ściana) oraz zmienia losowo pozycje goblinow.
+     * Porusza graczem w lewo (pod warunkiem, ze nie jest to sciana) oraz zmienia losowo pozycje goblinow.
      * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
      * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)
@@ -202,7 +202,7 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Porusza graczem w prawo (pod warunkiem, ze nie jest to ściana) oraz zmienia losowo pozycje goblinow.
+     * Porusza graczem w prawo (pod warunkiem, ze nie jest to sciana) oraz zmienia losowo pozycje goblinow.
      * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
      * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)
@@ -238,7 +238,7 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Porusza graczem w gorę (pod warunkiem, ze nie jest to sciana) oraz zmienia losowo pozycje goblinow.
+     * Porusza graczem w gore (pod warunkiem, ze nie jest to sciana) oraz zmienia losowo pozycje goblinow.
      * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
      * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)

@@ -97,8 +97,8 @@ public class Stats {
 
     /**
      * Metoda ustawiajaca wysokosc i szerokosc panelu.
-     * @param heigth wysokość panelu
-     * @param width szerokość panelu
+     * @param heigth wysokosc panelu
+     * @param width szerokosc panelu
      */
     public void setSize(int heigth, int width) {
         statsPanel.setPreferredSize(new Dimension(width, heigth));
@@ -116,8 +116,8 @@ public class Stats {
 
     /**
      * Zmniejsza wartosc parametru health o jeden.
-     * Ustawia nową wartosc w panelu. <br>
-     * Wyswietla okno koncowe (przegrana) gdy wartość parametru health rowna jest zeru.
+     * Ustawia nowa wartosc w panelu. <br>
+     * Wyswietla okno koncowe (przegrana) gdy wartosc parametru health rowna jest zeru.
      */
     public static void decreaseHealth() {
         // Zmniejszanie zycia

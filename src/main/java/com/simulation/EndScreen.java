@@ -24,7 +24,7 @@ public class EndScreen {
     private long elapsedMinutes;
 
     /**
-     * Tworzy okno wyswietlające statystyki wygranej gry oraz zapisuje je do plikow .txt pod nazwa gracza - wprowadzona na początku gry.
+     * Tworzy okno wyswietlajace statystyki wygranej gry oraz zapisuje je do plikow .txt pod nazwa gracza - wprowadzona na poczatku gry.
      */
     public void displayWin() {
         // Tworzenie okna
