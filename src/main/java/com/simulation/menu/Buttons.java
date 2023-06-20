@@ -10,8 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Klasa tworząca panel przycisków. Zawiera cztery przyciski do poruszania się po planszy i jeden dodatkowy do czekania w miejscu.
- * Ponadto posiada pięć klas wewnętrzych odpowiedzialnych za poruszanie się za pomocą klawiszy WASD oraz Q (czekanie).
+ * Klasa tworzaca panel przyciskow. Zawiera cztery przyciski do poruszania sie po planszy i jeden dodatkowy do czekania w miejscu.
+ * Ponadto posiada piec klas wewnetrzych odpowiedzialnych za poruszanie sie za pomoca klawiszy WASD oraz Q (czekanie).
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -33,7 +33,7 @@ public class Buttons implements ActionListener{
 
 
     /**
-     * Dodaje panel przycisków do panelu menu.
+     * Dodaje panel przyciskow do panelu menu.
      * @param menu panel menu
      * @see Menu
      */
@@ -42,11 +42,11 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Konstruktor klasy Buttons. Ustawia wartości atrybutów. Wywołuję metodę która: <br>
-     * 1) tworzy przyciski do poruszania się po mapie <br>
-     * 2) ustawia klawisze również do poruszania się po mapie.
-     * @param heigth wysokość panelu
-     * @param width szerokość panelu
+     * Konstruktor klasy Buttons. Ustawia wartosci atrybutow. Wywoluję metode ktora: <br>
+     * 1) tworzy przyciski do poruszania sie po mapie <br>
+     * 2) ustawia klawisze rowniez do poruszania sie po mapie.
+     * @param heigth wysokosc panelu
+     * @param width szerokosc panelu
      * @param board obiekt klasy Board
      * @see Board
      */
@@ -58,9 +58,9 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Metodę która: <br>
-     * 1) tworzy przyciski do poruszania się po mapie <br>
-     * 2) ustawia klawisze również do poruszania się po mapie.
+     * Metode ktora: <br>
+     * 1) tworzy przyciski do poruszania sie po mapie <br>
+     * 2) ustawia klawisze rowniez do poruszania sie po mapie.
      */
     public void start() {
         // Tworzenie przyciskow
@@ -135,7 +135,7 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Metoda, która ustawia następną planszę oraz szuka nowych pozycji gracza i goblinów.
+     * Metoda, ktora ustawia następna plansze oraz szuka nowych pozycji gracza i goblinow.
      * @see Player#findPlayerPos()
      * @see Goblin#findGoblinPos()
      */
@@ -167,8 +167,8 @@ public class Buttons implements ActionListener{
 
     /**
      * Porusza graczem w lewo (pod warunkiem, że nie jest to ściana) oraz zmienia losowo pozycję goblinów.
-     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
-     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * Usuwa goblinow z planszy gdy zaatakują gracza, odejmuje zycie gracza.
+     * W przypadku przejscia na nowa plansze ustawia ponownie pokonanych przeciwnikow na plansze.
      * @see Player#movePlayer(int, String)
      * @see Goblin#moveGoblin()
      * @see Goblin#goblinDies(int)
@@ -311,9 +311,9 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * Zmienia losowo pozycję goblinów.
-     * Usuwa goblinów z planszy gdy zaatakują gracza, odejmuje życie gracza.
-     * W przypadku przejścia na nową planszę ustawia ponownie pokonanych przeciwników na planszę.
+     * Zmienia losowo pozycje goblinow.
+     * Usuwa goblinow z planszy gdy zaatakuja gracza, odejmuje zycie gracza.
+     * W przypadku przejscia na nową planszę ustawia ponownie pokonanych przeciwnikow na planszę.
      * @see Goblin#moveGoblin()
      * @see Goblin#goblinDies(int)
      */
@@ -362,14 +362,14 @@ public class Buttons implements ActionListener{
     }
 
     /**
-     * @return liczba wykonanych ruchów
+     * @return liczba wykonanych ruchow
      */
     public static int getMoveCounter() {
         return moveCounter;
     }
 
     /**
-     * Klasa wewnętrzna odpowiedzialna za ruch do góry za pomoca klawisza.
+     * Klasa wewnetrzna odpowiedzialna za ruch do gory za pomoca klawisza.
      */
     private class UpAction extends AbstractAction {
 
@@ -380,7 +380,7 @@ public class Buttons implements ActionListener{
         }
     }
     /**
-     * Klasa wewnętrzna odpowiedzialna za ruch w dół za pomoca klawisza.
+     * Klasa wewnetrzna odpowiedzialna za ruch w dol za pomoca klawisza.
      */
     private class DownAction extends AbstractAction {
 
@@ -391,7 +391,7 @@ public class Buttons implements ActionListener{
         }
     }
     /**
-     * Klasa wewnętrzna odpowiedzialna za ruch w prawo za pomoca klawisza.
+     * Klasa wewnetrzna odpowiedzialna za ruch w prawo za pomoca klawisza.
      */
     private class RightAction extends AbstractAction {
 

@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Klasa tworząca panel planszy na której toczy się gra. Zawiera trzy różne plansze. Łączy back-end z front-endem i stanowi główną część programu.
+ * Klasa tworzaca panel planszy na ktorej toczy sie gra. Zawiera trzy rozne plansze. Laczy back-end z front-endem i stanowi glowna czesc programu.
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -18,13 +18,13 @@ public class Board {
 
     /**
      * Pierwsza plansza. <br>
-     * 0 - wolne pole (można na nie wejść) <br>
-     * 1 - ściana <br>
+     * 0 - wolne pole (mozna na nie wejsc) <br>
+     * 1 - sciana <br>
      * 2 - gracz <br>
-     * 3 - życie <br>
+     * 3 - zycie <br>
      * 4 - goblin <br>
-     * 5 - diament (przejście na 2 plansze) <br>
-     * 6 - diament (przejście na 3 plansze) <br>
+     * 5 - diament (przejscie na 2 plansze) <br>
+     * 6 - diament (przejscie na 3 plansze) <br>
      * 7 - puchar (wygrana)
      */
     private final int[][] fieldStateArray = {
@@ -52,13 +52,13 @@ public class Board {
     };
     /**
      * Druga plansza. <br>
-     * 0 - wolne pole (można na nie wejść) <br>
-     * 1 - ściana <br>
+     * 0 - wolne pole (mozna na nie wejsc) <br>
+     * 1 - sciana <br>
      * 2 - gracz <br>
-     * 3 - życie <br>
+     * 3 - zycie <br>
      * 4 - goblin <br>
-     * 5 - diament (przejście na 2 plansze) <br>
-     * 6 - diament (przejście na 3 plansze) <br>
+     * 5 - diament (przejscie na 2 plansze) <br>
+     * 6 - diament (przejscie na 3 plansze) <br>
      * 7 - puchar (wygrana)
      */
     private static final int[][] fieldStateArray2 = {
@@ -86,13 +86,13 @@ public class Board {
     };
     /**
      * Trzecia plansza. <br>
-     * 0 - wolne pole (można na nie wejść) <br>
-     * 1 - ściana <br>
+     * 0 - wolne pole (mozna na nie wejsc) <br>
+     * 1 - sciana <br>
      * 2 - gracz <br>
-     * 3 - życie <br>
+     * 3 - zycie <br>
      * 4 - goblin <br>
-     * 5 - diament (przejście na 2 poziom) <br>
-     * 6 - diament (przejście na 3 poziom) <br>
+     * 5 - diament (przejscie na 2 poziom) <br>
+     * 6 - diament (przejscie na 3 poziom) <br>
      * 7 - puchar (wygrana)
      */
     private static final int[][] fieldStateArray3 = {
@@ -121,9 +121,9 @@ public class Board {
     private JPanel board;
 
     /**
-     * Konstruktor główny klasy Board. Ustawia wartości - rozmiar panelu planszy.
-     * @param heigth wysokość panelu
-     * @param width szerokość panelu
+     * Konstruktor glowny klasy Board. Ustawia wartosci - rozmiar panelu planszy.
+     * @param heigth wysokosc panelu
+     * @param width szerokosc panelu
      */
     public Board(int heigth, int width) {
         boardHeigth = heigth;
@@ -132,7 +132,7 @@ public class Board {
     }
 
     /**
-     * Konstruktor podrzędny klasy Board.
+     * Konstruktor podrzedny klasy Board.
      */
     public Board() {
 
@@ -142,7 +142,7 @@ public class Board {
 
     /**
      * Tworzy panel planszy i ustawia poziom pierwszy (pierwsza plansza).
-     * Panel planszy składa się z 400 przycisków na których znajdują się obiekty oraz po których one się poruszają. <br>
+     * Panel planszy sklada sie z 400 przyciskow na ktorych znajduja sie obiekty oraz po ktorych one sie poruszaja. <br>
      */
     public void display() {
         // Tworzenie panelu i planszy
@@ -215,8 +215,8 @@ public class Board {
 
 
     /**
-     * Metoda odswieżająca planszę. Odpowiada za reprezentację graficzną obiektów.
-     * Zmienia ikony oraz kolory przycisków na odpowiednich polach.
+     * Metoda odswiezajaca plansze. Odpowiada za reprezentacje graficzna obiektow.
+     * Zmienia ikony oraz kolory przyciskow na odpowiednich polach.
      */
     public void refresh() {
         // Odswiezanie planszy
@@ -267,8 +267,8 @@ public class Board {
 
 
     /**
-     * Dodaje panel planszy do okna głównego programu.
-     * @param mainFrame okno główne
+     * Dodaje panel planszy do okna glownego programu.
+     * @param mainFrame okno glowne
      */
     public void add(JFrame mainFrame) {
         mainFrame.add(board);
@@ -276,7 +276,7 @@ public class Board {
 
 
     /**
-     * Zwraca calą pierwszą planszę w postaci tablicy dwuwymiarowej (macierzy).
+     * Zwraca cala pierwsza plansze w postaci tablicy dwuwymiarowej (macierzy).
      * @return {@link Board#fieldStateArray}
      */
     public int[][] getFieldStateArray() {
@@ -303,9 +303,9 @@ public class Board {
     }
 
     /**
-     * Ustawienie nowej pozycji goblinów na planszy.
-     * @param entityPositions nowa pozycja goblinów
-     * @param oldPosition stara pozycja goblinów
+     * Ustawienie nowej pozycji goblinow na planszy.
+     * @param entityPositions nowa pozycja goblinow
+     * @param oldPosition stara pozycja goblinow
      * @see Goblin#moveGoblin()
      */
     public void setFieldStateArray2(int[][] entityPositions, int[][] oldPosition) {
@@ -325,7 +325,7 @@ public class Board {
     }
 
     /**
-     * Ustawia podaną pozycje na planszy na wartość 0 (białe pole po którym można chodzić)
+     * Ustawia podana pozycje na planszy na wartosc 0 (biale pole po ktorym mozna chodzic)
      * @param position pozycja
      */
     public void changeTo0(int[] position) {
@@ -333,7 +333,7 @@ public class Board {
     }
 
     /**
-     * Zwraca calą drugą planszę w postaci tablicy dwuwymiarowej (macierzy).
+     * Zwraca cala druga plansze w postaci tablicy dwuwymiarowej (macierzy).
      * @return {@link Board#fieldStateArray2}
      */
     public static int[][] getFieldStateArray2() {
@@ -341,7 +341,7 @@ public class Board {
     }
 
     /**
-     * Zwraca calą trzecią planszę w postaci tablicy dwuwymiarowej (macierzy).
+     * Zwraca cala trzecia plansze w postaci tablicy dwuwymiarowej (macierzy).
      * @return {@link Board#fieldStateArray3}
      */
     public static int[][] getFieldStateArray3() {
@@ -349,7 +349,7 @@ public class Board {
     }
 
     /**
-     * Wartość od 1 do 3.
+     * Wartosc od 1 do 3.
      * @param currentLvL aktualna plansza (poziom)
      */
     public static void setCurrentLvL(int currentLvL) {
@@ -357,7 +357,7 @@ public class Board {
     }
 
     /**
-     * Wartość od 1 do 3
+     * Wartosc od 1 do 3
      * @return aktualna plansza (poziom)
      */
     public static int getCurrentLvL() {

@@ -8,8 +8,8 @@ import java.awt.*;
 
 
 /**
- * Klasa tworząca główne okno programu. Zawiera dwa panele: menu oraz plansze po której toczy się gra.
- * Odpowiedzialna jest również za przekazywanie kolejnym klasom wymiarów.
+ * Klasa tworzaca glowne okno programu. Zawiera dwa panele: menu oraz plansze po ktorej toczy sie gra.
+ * Odpowiedzialna jest rowniez za przekazywanie kolejnym klasom wymiarow.
  * @author Jakub, Marek
  * @version 1.2.0
  */
@@ -23,7 +23,7 @@ public class MainFrame  {
     private static long startTime;
 
     /**
-     * Rozpoczyna program. Tworzy obiekt klasy Settings i wywołuje funkcje odpowiedzialną za stworzenie pierwszego okna.
+     * Rozpoczyna program. Tworzy obiekt klasy Settings i wywoluje funkcje odpowiedzialna za stworzenie pierwszego okna.
      * @see Settings
      */
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class MainFrame  {
 
 
     /**
-     * Tworzy okno główne gry, składające się z dwóch paneli: planszy oraz menu.
+     * Tworzy okno głowne gry, skladajace sie z dwoch paneli: planszy oraz menu.
      * @param stats obiekt klasy Stats
      * @see Board
      * @see Menu
@@ -74,7 +74,7 @@ public class MainFrame  {
     }
 
     /**
-     * Zamyka okno główne gry.
+     * Zamyka okno glowne gry.
      * @see MainFrame
      */
     public static void dispose() {
@@ -82,8 +82,8 @@ public class MainFrame  {
     }
 
     /**
-     * Metoda zwracająca czas startu gry.
-     * Czas zliczany jest od momentu stworzenia głównego okna gry (wywołania funkcji {@link com.simulation.MainFrame#start(Stats)})
+     * Metoda zwracajaca czas startu gry.
+     * Czas zliczany jest od momentu stworzenia glownego okna gry (wywołania funkcji {@link com.simulation.MainFrame#start(Stats)})
      * @return czas startu gry
      */
     public static long getStartTime() {

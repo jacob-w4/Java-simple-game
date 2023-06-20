@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe09a2b-e8a3-46d6-828d-a8d05fbc59f5" name="Changes" comment="1.2.0">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_06_2023_17_18__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_06_2023_17_18__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/EndScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/EndScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/entities/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/entities/Goblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/menu/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/menu/Buttons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/simulation/menu/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/simulation/menu/Stats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686575109493</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="1.2.0">
+      <created>1687176810294</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1687176810294</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
